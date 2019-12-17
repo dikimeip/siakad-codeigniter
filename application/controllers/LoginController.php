@@ -23,7 +23,7 @@ class LoginController extends CI_Controller
 		if ($id == 0) {
 			$query = $this->Models->login_siswa($uname,$pswd);
 			if (count($query) > 0) {
-				echo "success login siswa";
+				redirect('SiswaController/index');
 			} else {
 				echo "Gagal Login siswa";
 			}
