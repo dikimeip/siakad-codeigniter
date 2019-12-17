@@ -37,7 +37,7 @@ class LoginController extends CI_Controller
 		} elseif ($id == 2) {
 			$query = $this->Models->login_staff($uname,$pswd);
 			if (count($query) > 0) {
-				echo "success login staff";
+				redirect('StaffController/index');
 			} else {
 				echo "Gagal Login staff";
 			}
