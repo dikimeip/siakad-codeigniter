@@ -14,7 +14,7 @@
 		<div class="panel-heading">
 			<form action=" <?php echo base_url('LoginController/DoLogin') ?> " method="post">
 				<div class="form-group">
-					<label>MASUKAN USERNAME ATAU EMAIL</label>
+					<label>MASUKAN NIM ATAU NIDN</label>
 					<input type="text" name="email" class="form-control">
 				</div>
 				<div class="form-group">
