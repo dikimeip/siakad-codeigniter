@@ -18,8 +18,15 @@ class LoginController extends CI_Controller
 	public function DoLogin()
 	{
 		$id = $this->input->post('level');
+		$uname = $this->input->post('email');
+		$pswd = $this->input->post('password');
 		if ($id == 0) {
-			echo "Student";
+			$query = $this->Models->login_siswa($uname,$pswd);
+			if (count($query) > 0) {
+				echo "success login siswa";
+			} else {
+				echo "Gagal Login siswa";
+			}
 		} elseif ($id == 1) {
 			echo "Teacher";
 		} elseif ($id == 2) {
