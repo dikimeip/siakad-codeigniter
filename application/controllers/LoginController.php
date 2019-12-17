@@ -35,7 +35,12 @@ class LoginController extends CI_Controller
 				echo "Gagal Login teacher";
 			}
 		} elseif ($id == 2) {
-			echo "Staff";
+			$query = $this->Models->login_staff($uname,$pswd);
+			if (count($query) > 0) {
+				echo "success login staff";
+			} else {
+				echo "Gagal Login staff";
+			}
 		}
 	}
 	
