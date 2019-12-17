@@ -30,7 +30,7 @@ class LoginController extends CI_Controller
 		} elseif ($id == 1) {
 			$query = $this->Models->login_guru($uname,$pswd);
 			if (count($query) > 0) {
-				echo "success login teacher";
+				redirect('GuruController/index');
 			} else {
 				echo "Gagal Login teacher";
 			}
