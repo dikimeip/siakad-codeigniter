@@ -8,6 +8,7 @@ class LoginController extends CI_Controller
 	function __construct (){
 		parent::__construct();
 		$this->load->model('MyModel','Models');
+		$this->load->library('session');
 	}
 	
 	public function index()
@@ -23,6 +24,9 @@ class LoginController extends CI_Controller
 		if ($id == 0) {
 			$query = $this->Models->login_siswa($uname,$pswd);
 			if (count($query) > 0) {
+				$this->session->set_userdata([
+					'isSiswa' => $query
+				]);
 				redirect('SiswaController/index');
 			} else {
 				echo "Gagal Login siswa";

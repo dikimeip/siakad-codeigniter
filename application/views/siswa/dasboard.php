@@ -1,1 +1,1 @@
-<h1>STUDENT CONTROLLER</h1>
+<h1>STUDENT CONTROLLER <?php echo $sess[0]['nama_siswa'] ?></h1>

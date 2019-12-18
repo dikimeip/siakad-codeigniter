@@ -14,9 +14,10 @@ class SiswaController extends CI_Controller
 
 	public function index()
 	{
+		$data['sess'] = $this->session->userdata('isSiswa');
 		$this->load->view('siswa/template/header');
 		$this->load->view('siswa/template/menu');
-		$this->load->view('siswa/dasboard');
+		$this->load->view('siswa/dasboard',$data);
 		$this->load->view('siswa/template/footer');
 
 	}
