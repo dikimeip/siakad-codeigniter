@@ -14,9 +14,10 @@ class StaffController extends CI_Controller
 
 	public function index()
 	{
+		$data['sess'] = $this->session->userdata('isStaff');
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu');
-		$this->load->view('admin/dasboard');
+		$this->load->view('admin/dasboard',$data);
 		$this->load->view('admin/template/footer');
 	}
 }

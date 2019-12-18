@@ -1,1 +1,1 @@
-<h1>ADMIN DASBOARD</h1>
+<h1>ADMIN DASBOARD <?php echo $sess[0]['nama_tu'] ?></h1>
