@@ -15,5 +15,9 @@ class SiswaController extends CI_Controller
 	public function index()
 	{
 		$this->load->view('siswa/template/header');
+		$this->load->view('siswa/template/menu');
+		$this->load->view('siswa/dasboard');
+		$this->load->view('siswa/template/footer');
+
 	}
 }
