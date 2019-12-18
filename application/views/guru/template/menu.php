@@ -12,14 +12,14 @@
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              ok
+              <?php echo $sess[0]['nama_guru'] ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a href="" class="dropdown-item">
+              <a href="<?php echo base_url('GuruController/logout') ?>" class="dropdown-item">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
