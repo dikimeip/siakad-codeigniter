@@ -31,6 +31,12 @@
 				<input type="submit" name="simpan" value="LOGIN" class="btn btn-info" >
 			</form>
 			<br>
+			<?php if ($this->session->flashdata('gagal')): ?>
+				<div class="alert alert-danger">
+					<p><?php echo $this->session->flashdata('gagal') ?></p>
+				</div>
+			<?php endif ?>
+			<br>
 		</div>
 	</div>
 </div>

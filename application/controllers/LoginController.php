@@ -29,7 +29,8 @@ class LoginController extends CI_Controller
 				]);
 				redirect('SiswaController/index');
 			} else {
-				echo "Gagal Login siswa";
+				$this->session->set_flashdata('gagal','Username atau password Salah');
+				redirect('LoginController/index');
 			}
 		} elseif ($id == 1) {
 			$query = $this->Models->login_guru($uname,$pswd);
@@ -39,7 +40,8 @@ class LoginController extends CI_Controller
 				]);
 				redirect('GuruController/index');
 			} else {
-				echo "Gagal Login teacher";
+				$this->session->set_flashdata('gagal','Username atau password Salah');
+				redirect('LoginController/index');
 			}
 		} elseif ($id == 2) {
 			$query = $this->Models->login_staff($uname,$pswd);
@@ -49,7 +51,8 @@ class LoginController extends CI_Controller
 				]);
 				redirect('StaffController/index');
 			} else {
-				echo "Gagal Login staff";
+				$this->session->set_flashdata('gagal','Username atau password Salah');
+				redirect('LoginController/index');
 			}
 		}
 	}
