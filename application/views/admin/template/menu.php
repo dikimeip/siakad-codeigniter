@@ -43,21 +43,51 @@
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Siswa</span>
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Guru</span>
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Pelajaran</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Nilai</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Materi</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Pengumuman</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Setting</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Keluar</span>
             </a>
           </li>
         </ul>
