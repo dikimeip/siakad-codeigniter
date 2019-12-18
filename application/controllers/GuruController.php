@@ -1,6 +1,6 @@
 <?php  
 
-/**
+/** 
  * 
  */
 class GuruController extends CI_Controller
@@ -14,6 +14,10 @@ class GuruController extends CI_Controller
 
 	public function index()
 	{
-		echo "Controller Guru";
+		$data['sess'] = $this->session->userdata('isGuru');
+		$this->load->view('guru/template/header');
+		$this->load->view('guru/template/menu');
+		$this->load->view('guru/dasboard',$data);
+		$this->load->view('guru/template/footer');
 	}
 }

@@ -1,0 +1,1 @@
+<h1>GURU DASBOARD <?php echo $sess[0]['nama_guru'] ?></h1>
