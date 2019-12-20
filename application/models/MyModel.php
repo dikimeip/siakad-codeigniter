@@ -31,5 +31,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->get('kelas')->result_array();
 	}
+
+	public function post_siswa($data)
+	{
+		return $this->db->insert('siswa',$data);
+	}
 	
 }
