@@ -1,12 +1,17 @@
 <h1 class="text-center">TAMBAH SISWA</h1>
-<form action="" method="post" enctype="multipart/form-data">
+<?php if (validation_errors()): ?>
+	<div class="alert alert-warning">
+		<p><?php echo validation_errors() ?></p>
+	</div>
+<?php endif ?>
+<form action="<?php echo base_url('StaffController/do_siswa') ?>" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<label>Masukan Nim</label>
-		<input type="text" name="nim" class="form-control">
+		<input type="text" name="nim" class="form-control" value="<?php echo set_value('nim') ?>">
 	</div>
 	<div class="form-group">
 		<label>Masukan Nama</label>
-		<input type="text" name="nama" class="form-control">
+		<input type="text" name="nama" class="form-control" value="<?php echo set_value('nama') ?>">
 	</div>
 	<div class="form-group">
 		<label>Masukan Kelas</label>
@@ -18,11 +23,11 @@
 	</div>
 	<div class="form-group">
 		<label>Masukan Tahun Masuk</label>
-		<input type="text" name="tahun" class="form-control">
+		<input type="text" name="tahun" class="form-control" value="<?php echo set_value('tahun') ?>">
 	</div>
 	<div class="form-group">
 		<label>Masukan Alamat</label>
-		<input type="text" name="alamat" class="form-control">
+		<input type="text" name="alamat" class="form-control" value="<?php echo set_value('alamat') ?>">
 	</div>
 	<div class="form-group">
 		<label>Masukan Foto</label>

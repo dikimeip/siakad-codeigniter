@@ -10,6 +10,7 @@ class StaffController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('MyModel','Models');
+		$this->load->library('form_validation');
 		if ($this->session->userdata('isStaff') == "") {
 			redirect('LoginController/index');
 		}
@@ -43,6 +44,24 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/tambah_siswa',$data);
 		$this->load->view('admin/template/footer');
+	}
+
+	public function do_siswa()
+	{
+		$this->form_validation->set_rules('nim','Nim','required|max[10]');
+		$this->form_validation->set_rules('nama','Nama','required');
+		$this->form_validation->set_rules('tahun','Tahun','required|max[4]');
+		$this->form_validation->set_rules('alamat','Alamat','required');
+		if ($this->form_validation->run() == false) {
+			$data['sess'] = $this->session->userdata('isStaff');
+			$data['kelas'] = $this->Models->get_kelas();
+			$this->load->view('admin/template/header');
+			$this->load->view('admin/template/menu',$data);
+			$this->load->view('admin/tambah_siswa',$data);
+			$this->load->view('admin/template/footer');
+		} else {
+			echo "Ok";
+		}
 	}
 
 
