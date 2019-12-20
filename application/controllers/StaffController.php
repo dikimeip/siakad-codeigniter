@@ -162,7 +162,7 @@ class StaffController extends CI_Controller
 		$data['siswa'] = $this->Models->id_siswa($id);
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
-		$this->load->view('admin/edit_siswa',$data);
+		$this->load->view('admin/show_siswa',$data);
 		$this->load->view('admin/template/footer');
 	}
 
