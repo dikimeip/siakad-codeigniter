@@ -24,6 +24,15 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function siswa()
+	{
+		$data['sess'] = $this->session->userdata('isStaff');
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/siswa');
+		$this->load->view('admin/template/footer');
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isStaff');
