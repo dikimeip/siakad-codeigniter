@@ -21,5 +21,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->get_where('tu',['username_tu'=>$uname,'password'=>$pswd])->result_array();
 	}
+
+	public function get_siswa()
+	{
+		return $this->db->get('siswa')->result_array();
+	}
 	
 }
