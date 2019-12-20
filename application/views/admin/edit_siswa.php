@@ -13,6 +13,7 @@
 	<div class="form-group">
 		<label>Masukan Kelas</label>
 		<select class="form-control" name="kelas">
+			<option value="<?php echo $siswa['id_kelas'] ?>"><?php echo $siswa['nama_kelas'] ?></option>
 			<?php foreach ($kelas as $k): ?>
 				<option value="<?php echo $k['id_kelas'] ?>"><?php echo $k['nama_kelas'] ?></option>
 			<?php endforeach ?>
