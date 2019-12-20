@@ -48,9 +48,9 @@ class StaffController extends CI_Controller
 
 	public function do_siswa()
 	{
-		$this->form_validation->set_rules('nim','Nim','required|max[10]');
+		$this->form_validation->set_rules('nim','Nim','required|max[10]|numeric');
 		$this->form_validation->set_rules('nama','Nama','required');
-		$this->form_validation->set_rules('tahun','Tahun','required|max[4]');
+		$this->form_validation->set_rules('tahun','Tahun','required|max[4]|numeric');
 		$this->form_validation->set_rules('alamat','Alamat','required');
 		if ($this->form_validation->run() == false) {
 			$data['sess'] = $this->session->userdata('isStaff');
@@ -60,7 +60,19 @@ class StaffController extends CI_Controller
 			$this->load->view('admin/tambah_siswa',$data);
 			$this->load->view('admin/template/footer');
 		} else {
-			echo "Ok";
+			$file = $_FILES['foto']['name'];
+			if ($file == "" ) {
+				echo "kosong";
+			} else {
+				$config['allowed_types'] = "png|jpg";
+				$config['upload_path'] = "./asset/image/";
+				$this->load->library('upload',$config);
+				if (!$this->upload->do_upload('foto')) {
+					echo "Kosong!";
+				} else {
+					echo "Ada";
+				}
+			}
 		}
 	}
 
