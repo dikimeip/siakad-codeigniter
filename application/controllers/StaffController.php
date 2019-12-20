@@ -93,7 +93,7 @@ class StaffController extends CI_Controller
 		}
 	}
 
-	public function edit($id)
+	public function edit_siswa($id)
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
 		$data['kelas'] = $this->Models->get_kelas();
@@ -102,6 +102,33 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/edit_siswa',$data);
 		$this->load->view('admin/template/footer');
+	}
+
+	public function do_edit_siswa()
+	{
+		$foto = $_FILES['foto']['name'];
+		if ($foto == "") {
+			$id = $this->input->post('id');
+			$data = [
+				'id_kelas' => $this->input->post('kelas'),
+				'nama_siswa' => $this->input->post('nama'),
+				'nim_siswa' => $this->input->post('nim'),
+				'thn_siswa' => $this->input->post('tahun'),
+				'alamat_siswa' => $this->input->post('alamat'),
+				'password_siswa' => $this->input->post('nim'),
+			];
+			$query = $this->Models->edit_siswa1($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','ubah data succes');
+				redirect('StaffController/siswa');
+			} else {
+				$this->session->set_flashdata('success','ubah data failed');
+				redirect('StaffController/siswa');
+			}
+
+		} else {
+			echo "ada";
+		}
 	}
 
 

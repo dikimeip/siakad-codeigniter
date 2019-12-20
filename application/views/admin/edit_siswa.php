@@ -1,9 +1,10 @@
 <h1>EDIT SISWA</h1>
 <br>
-<form action="" method="post" enctype="multipart/form-data">
+<form action="<?php echo base_url('StaffController/do_edit_siswa') ?>" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<label>Masukan Nim</label>
-		<input type="text" name="nim" class="form-control" value="<?php echo $siswa['nim_siswa'] ?>">
+		<input type="number" name="nim" class="form-control" value="<?php echo $siswa['nim_siswa'] ?>">
+		<input type="hidden" name="id" class="form-control" value="<?php echo $siswa['id_siswa'] ?>">
 	</div>
 	<div class="form-group">
 		<label>Masukan Nama</label>
@@ -19,7 +20,7 @@
 	</div>
 	<div class="form-group">
 		<label>Masukan Tahun Masuk</label>
-		<input type="text" name="tahun" class="form-control" value="<?php echo $siswa['thn_siswa'] ?>">
+		<input type="number" name="tahun" class="form-control" value="<?php echo $siswa['thn_siswa'] ?>">
 	</div>
 	<div class="form-group">
 		<label>Masukan Alamat</label>
