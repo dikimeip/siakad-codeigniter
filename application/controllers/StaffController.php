@@ -127,7 +127,32 @@ class StaffController extends CI_Controller
 			}
 
 		} else {
-			echo "ada";
+			$config['allowed_types'] = "png|jpg";
+			$config['upload_path'] = "./asset/image/";
+			$this->load->library('upload',$config);
+			if (!$this->upload->do_upload('foto')) {
+				echo "Kosong!";
+			} else {
+				$id = $this->input->post('id');
+				$data = [
+					'id_kelas' => $this->input->post('kelas'),
+					'nama_siswa' => $this->input->post('nama'),
+					'nim_siswa' => $this->input->post('nim'),
+					'thn_siswa' => $this->input->post('tahun'),
+					'alamat_siswa' => $this->input->post('alamat'),
+					'foto_siswa' => $_FILES['foto']['name'],
+					'password_siswa' => $this->input->post('nim'),
+				];
+
+				$query = $this->Models->edit_siswa($id,$data);
+				if ($query) {
+					$this->session->set_flashdata('success','ubah data succes');
+					redirect('StaffController/siswa');
+				} else {
+					$this->session->set_flashdata('success','ubah data failed');
+					redirect('StaffController/siswa');
+				}
+			}
 		}
 	}
 

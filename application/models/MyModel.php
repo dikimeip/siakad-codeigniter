@@ -47,5 +47,11 @@ class MyModel extends CI_Model
 		$this->db->where('id_siswa',$id);
 		return $this->db->update('siswa',$data);
 	}
+
+	public function edit_siswa($id,$data)
+	{
+		$this->db->where('id_siswa',$id);
+		return $this->db->update('siswa',$data);
+	}
 	
 }
