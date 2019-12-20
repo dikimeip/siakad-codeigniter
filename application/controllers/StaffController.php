@@ -93,6 +93,16 @@ class StaffController extends CI_Controller
 		}
 	}
 
+	public function edit($id)
+	{
+		$data['sess'] = $this->session->userdata('isStaff');
+		//$data['kelas'] = $this->Models->get_kelas();
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/edit_siswa');
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 	public function logout()
