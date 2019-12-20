@@ -2,7 +2,7 @@
 <br>
 <div class="row">
 	<div class="col-md-8">
-		<a href="" class="btn btn-info">TAMBAH</a>
+		<a href="<?php echo base_url('StaffController/tambah_siswa') ?>" class="btn btn-info">TAMBAH</a>
 	</div>
 	<div class="col-md-4">
 		<form>
