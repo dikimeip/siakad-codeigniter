@@ -11,7 +11,9 @@
 	<div class="form-group">
 		<label>Masukan Kelas</label>
 		<select class="form-control" name="kelas">
-			<option>9</option>
+			<?php foreach ($kelas as $k): ?>
+				<option value="<?php echo $k['id_kelas'] ?>"><?php echo $k['nama_kelas'] ?></option>
+			<?php endforeach ?>
 		</select>
 	</div>
 	<div class="form-group">

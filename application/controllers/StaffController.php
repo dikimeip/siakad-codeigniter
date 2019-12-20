@@ -38,9 +38,10 @@ class StaffController extends CI_Controller
 	public function tambah_siswa()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
+		$data['kelas'] = $this->Models->get_kelas();
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
-		$this->load->view('admin/tambah_siswa');
+		$this->load->view('admin/tambah_siswa',$data);
 		$this->load->view('admin/template/footer');
 	}
 

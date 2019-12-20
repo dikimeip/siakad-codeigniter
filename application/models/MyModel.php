@@ -26,5 +26,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->get('siswa')->result_array();
 	}
+
+	public function get_kelas()
+	{
+		return $this->db->get('kelas')->result_array();
+	}
 	
 }
