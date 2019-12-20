@@ -179,6 +179,17 @@ class StaffController extends CI_Controller
 		}
 	}
 
+	public function cari_siswa()
+	{
+		$data['sess'] = $this->session->userdata('isStaff');
+		$data['siswa'] = $this->Models->cari_siswa();
+		$data['no'] =1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/siswa',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 	public function logout()

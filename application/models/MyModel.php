@@ -63,5 +63,14 @@ class MyModel extends CI_Model
 		$this->db->where('id_siswa',$id);
 		return $this->db->delete('siswa');
 	}
+
+	public function cari_siswa()
+	{
+		$cari = $this->input->post('cari');
+		$this->db->select('*');
+		$this->db->from('siswa');
+		$this->db->like('nama_siswa',$cari);
+		return $this->db->get()->result_array();
+	}
 	
 }
