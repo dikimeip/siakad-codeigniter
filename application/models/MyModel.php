@@ -36,5 +36,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->insert('siswa',$data);
 	}
+
+	public function id_siswa($id)
+	{
+		return $this->db->get_where('siswa',['id_siswa'=>$id])->row_array();
+	}
 	
 }
