@@ -39,9 +39,9 @@ class MyModel extends CI_Model
 
 	public function id_siswa($id)
 	{
-		//$this->db->get('*');
+		$this->db->select('*');
 		$this->db->from('siswa');
-		$this->db->join('kelas','kelas.id_kelas = siswa.id_siswa');
+		$this->db->join('kelas','kelas.id_kelas = siswa.id_kelas');
 		$this->db->where('id_siswa',$id);
 		return $this->db->get()->row_array();
 	}
@@ -56,6 +56,12 @@ class MyModel extends CI_Model
 	{
 		$this->db->where('id_siswa',$id);
 		return $this->db->update('siswa',$data);
+	}
+
+	public function hapus_siswa($id)
+	{
+		$this->db->where('id_siswa',$id);
+		return $this->db->delete('siswa');
 	}
 	
 }

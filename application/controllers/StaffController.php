@@ -98,6 +98,7 @@ class StaffController extends CI_Controller
 		$data['sess'] = $this->session->userdata('isStaff');
 		$data['kelas'] = $this->Models->get_kelas();
 		$data['siswa'] = $this->Models->id_siswa($id);
+		//var_dump($data['siswa']);
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/edit_siswa',$data);
@@ -164,6 +165,18 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/show_siswa',$data);
 		$this->load->view('admin/template/footer');
+	}
+
+	public function hapus_siswa($id)
+	{
+		$query = $this->Models->hapus_siswa($id);
+		if ($query) {
+			$this->session->set_flashdata('success','hapus data succes');
+			redirect('StaffController/siswa');
+		} else {
+			$this->session->set_flashdata('success','hapus data failed');
+			redirect('StaffController/siswa');
+		}
 	}
 
 

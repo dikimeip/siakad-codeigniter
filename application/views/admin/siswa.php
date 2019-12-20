@@ -33,7 +33,7 @@
 			<td><?php echo $s['alamat_siswa'] ?></td>
 			<td>
 				<a href="<?php echo base_url() ?>StaffController/edit_siswa/<?php echo $s['id_siswa'] ?>" class="btn btn-info btn-sm">EDIT</a>
-				<a href="" class="btn btn-warning btn-sm">HAPUS</a>
+				<a onclick="return confirm('Hapus data ..?')" href="<?php echo base_url() ?>StaffController/hapus_siswa/<?php echo $s['id_siswa'] ?>" class="btn btn-warning btn-sm">HAPUS</a>
 				<a href="<?php echo base_url() ?>StaffController/show_siswa/<?php echo $s['id_siswa'] ?>" class="btn btn-success btn-sm">SHOW</a>
 			</td>
 		</tr>
