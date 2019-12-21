@@ -93,5 +93,11 @@ class MyModel extends CI_Model
 		$this->db->where('id_pelajaran',$id);
 		return $this->db->delete('pelajaran');
 	}
+
+	public function get_pelajaran_id($id)
+	{
+		$this->db->where('id_pelajaran',$id);
+		return $this->db->get('pelajaran')->row_array();
+	}
 	
 }
