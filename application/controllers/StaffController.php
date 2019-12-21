@@ -11,6 +11,7 @@ class StaffController extends CI_Controller
 		parent::__construct();
 		$this->load->model('MyModel','Models');
 		$this->load->library('form_validation');
+		$this->load->library('pagination');
 		if ($this->session->userdata('isStaff') == "") {
 			redirect('LoginController/index');
 		}
@@ -27,9 +28,17 @@ class StaffController extends CI_Controller
 
 	public function siswa()
 	{
+
 		$data['sess'] = $this->session->userdata('isStaff');
 		$data['siswa'] = $this->Models->get_siswa();
 		$data['no'] =1;
+		$jumlah = count($data['siswa']);
+		//pagination
+		// $config['base_url'] = 'http://localhost/siakad/StaffController/cari_siswa/';
+		// $config['total_rows'] = $jumlah;
+		// $config['per_page'] = 2;
+		// $this->pagination->initialize($config);
+
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/siswa',$data);
