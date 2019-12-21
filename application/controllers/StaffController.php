@@ -250,6 +250,17 @@ class StaffController extends CI_Controller
 		}
 	}
 
+	public function ubah_pelajaran($id)
+	{
+		$data['sess'] = $this->session->userdata('isStaff');
+		//$data['pelajaran'] = $this->Models->get_pelajaran();
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/edit_pelajaran');
+		$this->load->view('admin/template/footer');
+	}
+	
+
 
 
 

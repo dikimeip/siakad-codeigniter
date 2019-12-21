@@ -30,7 +30,7 @@
 			<td><?php echo $s['nama_pelajaran'] ?></td>
 			<td><?php echo $s['jam_pelajaran'] ?></td>
 			<td>
-				<a href="" class="btn btn-info btn-sm">EDIT</a>
+				<a href="<?php echo base_url() ?>StaffController/ubah_pelajaran/<?php echo $s['id_pelajaran']  ?>" class="btn btn-info btn-sm">EDIT</a>
 				<a onclick="return confirm('Hapus data ..?')" href="<?php echo base_url() ?>StaffController/delete_pelajaran/<?php echo $s['id_pelajaran']  ?>" class="btn btn-warning btn-sm">HAPUS</a>
 			</td>
 		</tr>
