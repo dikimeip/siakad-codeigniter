@@ -73,11 +73,6 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
-	public function get_guru()
-	{
-		return $this->db->get('guru')->result_array();
-	}
-
 	public function get_pelajaran()
 	{
 		return $this->db->get('pelajaran')->result_array();
@@ -111,6 +106,14 @@ class MyModel extends CI_Model
 		$this->db->select('*');
 		$this->db->from('pelajaran');
 		$this->db->like('nama_pelajaran',$cari);
+		return $this->db->get()->result_array();
+	}
+
+	public function get_guru()
+	{
+		$this->db->select('*');
+		$this->db->from('guru');
+		$this->db->join('pelajaran','pelajaran.id_pelajaran = guru.id_pelajaran');
 		return $this->db->get()->result_array();
 	}
 	

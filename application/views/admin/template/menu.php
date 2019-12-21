@@ -66,6 +66,12 @@
               <span class="menu-title">Nilai</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Kelas</span>
+            </a>
+          </li>
            <li class="nav-item">
             <a class="nav-link" href="">
               <i class="ti-pie-chart menu-icon"></i>
