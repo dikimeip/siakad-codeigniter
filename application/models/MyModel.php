@@ -87,5 +87,11 @@ class MyModel extends CI_Model
 	{
 		return  $this->db->insert('pelajaran',$data) ;
 	}
+
+	public function hapus_pelajaran($id)
+	{
+		$this->db->where('id_pelajaran',$id);
+		return $this->db->delete('pelajaran');
+	}
 	
 }

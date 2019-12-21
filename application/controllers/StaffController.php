@@ -238,6 +238,18 @@ class StaffController extends CI_Controller
 		}
 	}
 
+	public function delete_pelajaran($id)
+	{
+		$query = $this->Models->hapus_pelajaran($id);
+		if ($query) {
+			$this->session->set_flashdata('success','hapus data succes');
+			redirect('StaffController/pelajaran');
+		} else {
+			$this->session->set_flashdata('success','hapus data failed');
+			redirect('StaffController/pelajaran');
+		}
+	}
+
 
 
 
