@@ -105,5 +105,13 @@ class MyModel extends CI_Model
 		$this->db->where('id_pelajaran',$id);
 		return $this->db->update('pelajaran',$data);
 	}
+
+	public function search_pelajaran($cari)
+	{
+		$this->db->select('*');
+		$this->db->from('pelajaran');
+		$this->db->like('nama_pelajaran',$cari);
+		return $this->db->get()->result_array();
+	}
 	
 }

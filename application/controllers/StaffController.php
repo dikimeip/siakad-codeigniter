@@ -278,6 +278,18 @@ class StaffController extends CI_Controller
 		}
 
 	}
+
+	public function search_pelajaran()
+	{
+		$cari = $this->input->post('cari');
+		$data['sess'] = $this->session->userdata('isStaff');
+		$data['pelajaran'] = $this->Models->search_pelajaran($cari);
+		$data['no'] =1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/pelajaran',$data);
+		$this->load->view('admin/template/footer');
+	}
 	
 
 
