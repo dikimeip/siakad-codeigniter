@@ -77,5 +77,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->get('guru')->result_array();
 	}
+
+	public function get_pelajaran()
+	{
+		return $this->db->get('pelajaran')->result_array();
+	}
 	
 }
