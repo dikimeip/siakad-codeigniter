@@ -99,5 +99,11 @@ class MyModel extends CI_Model
 		$this->db->where('id_pelajaran',$id);
 		return $this->db->get('pelajaran')->row_array();
 	}
+
+	public function edit_pelajaran($id,$data)
+	{
+		$this->db->where('id_pelajaran',$id);
+		return $this->db->update('pelajaran',$data);
+	}
 	
 }

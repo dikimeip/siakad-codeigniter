@@ -1,5 +1,5 @@
 <h1 class="text-center">UBAH PELAJARAN</h1>
-<form action="<?php echo base_url('StaffController/do_pelajaran') ?>" method="post">
+<form action="<?php echo base_url('StaffController/edit_pelajaran') ?>" method="post">
 	<div class="form-group">
 		<label>Masukan Nama Pelajaran</label>
 		<input type="hidden" name="id" value="<?php echo $pelajaran['id_pelajaran'] ?>">

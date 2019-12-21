@@ -259,6 +259,25 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/edit_pelajaran');
 		$this->load->view('admin/template/footer');
 	}
+
+	public function edit_pelajaran()
+	{
+		$id = $this->input->post('id');
+		$data = [
+			'nama_pelajaran' => $this->input->post('nama'),
+			'jam_pelajaran' => $this->input->post('jam'),
+		];
+
+		$query = $this->Models->edit_pelajaran($id,$data);
+		if ($query) {
+			$this->session->set_flashdata('success','Tambah data berhasil');
+			redirect('StaffController/pelajaran');
+		} else {
+			$this->session->set_flashdata('success','Tambah data Failed');
+			redirect('StaffController/pelajaran');
+		}
+
+	}
 	
 
 
