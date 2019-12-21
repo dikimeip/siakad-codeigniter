@@ -45,14 +45,14 @@
         <h4 class="modal-title">Tambah Pelajaran</h4>
       </div>
       <div class="modal-body">
-       	<form>
+       	<form action="<?php echo base_url('StaffController/do_pelajaran') ?>" method="post">
        		<div class="form-group">
        			<label>Masukan Nama Pelajaran</label>
-       			<input type="text" name="nama" class="form-control">
+       			<input type="text" name="nama" class="form-control" required="">
        		</div>
        		<div class="form-group">
        			<label>Masukan Jam Pelajaran</label>
-       			<input type="number" name="jam" class="form-control">
+       			<input type="number" name="jam" class="form-control" required="">
        		</div>
        		<input type="submit" value="SIMPAN" class="btn btn-info">
        	</form>

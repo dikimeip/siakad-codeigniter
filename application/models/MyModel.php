@@ -82,5 +82,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->get('pelajaran')->result_array();
 	}
+
+	public function post_pelajaran($data)
+	{
+		return  $this->db->insert('pelajaran',$data) ;
+	}
 	
 }
