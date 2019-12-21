@@ -17,7 +17,7 @@
 		<p><?php echo $this->session->flashdata('success') ?></p>
 	</div>
 <?php endif ?>
-<table class="table table-hover">
+<table class="table table-hover" id="table_id">
 	<tr>
 		<th>NO</th>
 		<th>NIM</th>
@@ -39,3 +39,4 @@
 		</tr>
 	<?php endforeach ?>
 </table>
+ 

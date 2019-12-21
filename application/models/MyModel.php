@@ -72,5 +72,10 @@ class MyModel extends CI_Model
 		$this->db->like('nama_siswa',$cari);
 		return $this->db->get()->result_array();
 	}
+
+	public function get_guru()
+	{
+		return $this->db->get('guru')->result_array();
+	}
 	
 }

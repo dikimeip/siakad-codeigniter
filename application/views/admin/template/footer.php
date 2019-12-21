@@ -19,7 +19,11 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
+<script>
+    $(document).ready( function () {
+        $('#table_id').DataTable();
+    });
+ </script>
   <!-- plugins:js -->
   <script src="<?php echo base_url() ?>asset/vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -35,6 +39,8 @@
   <!-- Custom js for this page-->
   <script src="<?php echo base_url() ?>asset/js/dashboard.js"></script>
   <!-- End custom js for this page-->
+  <script src="<?php echo base_url() ?>asset/vendors/DataTables/DataTables-1.10.20/js/jquery.dataTables.js"></script>
+ 
 </body>
 
 </html>

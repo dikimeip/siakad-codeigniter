@@ -9,6 +9,8 @@
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/vendors/DataTables/DataTables-1.10.20/css/jquery.dataTables.css">
+
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
