@@ -5,7 +5,7 @@
 	</div>
 <?php endif ?>
 <br>
-<form action="<?php echo base_url('StaffController/post_guru') ?>" method="post">
+<form enctype="multipart/form-data" action="<?php echo base_url('StaffController/post_guru') ?>" method="post">
 	<div class="form-group">
 		<label>Masukan nama guru</label>
 		<input type="text" name="nama" class="form-control" value="<?php echo set_value('nama') ?>">

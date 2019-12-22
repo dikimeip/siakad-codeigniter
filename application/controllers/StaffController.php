@@ -236,7 +236,19 @@ class StaffController extends CI_Controller
 			$this->load->view('admin/tambah_guru',$data);
 			$this->load->view('admin/template/footer');
 		} else {
-			echo "Ok";
+			$file = $_FILES['foto']['name'];
+			if ($file == "") {
+				echo "Kosong";
+			} else {
+				$config['allowed_types'] = 'jpg|png';
+				$config['upload_path'] = './asset/image';
+				$this->load->library('upload',$config);
+				if (!$this->upload->do_upload('foto')) {
+					echo "Failed";
+				} else {
+					echo "Finish";
+				}
+			}
 		}
 	}
 
