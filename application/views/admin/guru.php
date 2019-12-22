@@ -31,7 +31,7 @@
 			<td><?php echo $s['nidn_guru'] ?></td>
 			<td><?php echo $s['nama_pelajaran'] ?></td>
 			<td>
-				<a href="" class="btn btn-info btn-sm">EDIT</a>
+				<a href="<?php echo base_url() ?>StaffController/edit_guru/<?php echo $s['id_guru'] ?>" class="btn btn-info btn-sm">EDIT</a>
 				<a href="" class="btn btn-success btn-sm">DETAIL</a>
 				<a onclick="return confirm('Hapus data ..?')" href="" class="btn btn-warning btn-sm">HAPUS</a>
 			</td>

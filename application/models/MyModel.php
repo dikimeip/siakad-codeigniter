@@ -114,12 +114,23 @@ class MyModel extends CI_Model
 		$this->db->select('*');
 		$this->db->from('guru');
 		$this->db->join('pelajaran','pelajaran.id_pelajaran = guru.id_pelajaran');
+		$this->db->join('kelas','kelas.id_kelas = guru.id_kelas');
 		return $this->db->get()->result_array();
 	}
 
 	public function post_guru($data)
 	{
 		return $this->db->insert('guru',$data);
+	}
+
+	public function id_guru($id)
+	{
+		$this->db->select('*');
+		$this->db->from('guru');
+		$this->db->join('pelajaran','pelajaran.id_pelajaran = guru.id_pelajaran');
+		$this->db->join('kelas','kelas.id_kelas = guru.id_kelas');
+		$this->db->where('id_guru',$id);
+		return $this->db->get()->row_array();
 	}
 	
 }
