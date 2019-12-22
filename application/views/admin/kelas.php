@@ -1,7 +1,7 @@
 <h1 class="text-center">DATA KELAS</h1>
 <div class="row">
 	<div class="col-md-8">
-		<a class="btn btn-info" href="<?php echo base_url('') ?>">TAMBAH</a>
+		<button class="btn btn-info" data-toggle="modal" data-target="#tambah">TAMBAH</button>
 	</div>
 	<div class="col-md-4">
 		<form method="post" action="<?php echo base_url('') ?>">
@@ -32,3 +32,21 @@
 		</tr>
 	<?php endforeach ?>
 </table>
+<div id="tambah" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-footer">
+				<b>TAMBAH KELAS</b>
+			</div>
+			<div class="modal-body">
+				<form action="<?php echo base_url('StaffController/post_kelas') ?>" method="post">
+					<div class="form-group">
+						<label>MASUKAN NAMA KELAS</label>
+						<input type="text" name="nama" class="form-control" required="">
+					</div>
+					<input type="submit" value="SIMPAN" class="btn btn-info">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

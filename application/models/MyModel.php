@@ -160,5 +160,10 @@ class MyModel extends CI_Model
 		$this->db->like('nama_guru',$cari);
 		return $this->db->get()->result_array();
 	}
+
+	public function post_kelas($kelas)
+	{
+		return $this->db->insert('kelas',$kelas);
+	}
 	
 }

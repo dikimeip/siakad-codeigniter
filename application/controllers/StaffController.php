@@ -368,6 +368,22 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function post_kelas()
+	{
+		$nama = [
+			'nama_kelas' =>strtoupper($this->input->post('nama'))
+		];
+
+		$query = $this->Models->post_kelas($nama);
+		if ($query) {
+			$this->session->set_flashdata('success','Update data succes');
+			redirect('StaffController/kelas');
+		} else {
+			$this->session->set_flashdata('success','Update data failed');
+			redirect('StaffController/kelas');
+		}
+	}
+
 	public function kelas()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
