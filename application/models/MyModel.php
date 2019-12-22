@@ -144,5 +144,11 @@ class MyModel extends CI_Model
 		$this->db->where('id_guru',$id);
 		return $this->db->update('guru',$data);
 	}
+
+	public function hapus_guru($id)
+	{
+		$this->db->where('id_guru',$id);
+		return $this->db->delete('guru');
+	}
 	
 }

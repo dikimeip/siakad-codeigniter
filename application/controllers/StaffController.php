@@ -344,6 +344,18 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function delete_guru($id)
+	{
+		$query = $this->Models->hapus_guru($id);
+		if ($query) {
+			$this->session->set_flashdata('success','Update data succes');
+			redirect('StaffController/guru');
+		} else {
+			$this->session->set_flashdata('success','Update data failed');
+			redirect('StaffController/guru');
+		}
+	}
+
 	public function kelas()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
