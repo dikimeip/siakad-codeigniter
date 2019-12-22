@@ -1,7 +1,7 @@
 <h1 class="text-center">DATA GURU</h1>
 <div class="row">
 	<div class="col-md-8">
-		<button class="btn btn-info">TAMBAH</button>
+		<a class="btn btn-info" href="<?php echo base_url('StaffController/tambah_guru') ?>">TAMBAH</a>
 	</div>
 	<div class="col-md-4">
 		<form method="post" action="<?php echo base_url('') ?>">
@@ -38,3 +38,4 @@
 		</tr>
 	<?php endforeach ?>
 </table>
+
