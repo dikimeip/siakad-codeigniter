@@ -116,5 +116,10 @@ class MyModel extends CI_Model
 		$this->db->join('pelajaran','pelajaran.id_pelajaran = guru.id_pelajaran');
 		return $this->db->get()->result_array();
 	}
+
+	public function post_guru($data)
+	{
+		return $this->db->insert('guru',$data);
+	}
 	
 }

@@ -246,7 +246,24 @@ class StaffController extends CI_Controller
 				if (!$this->upload->do_upload('foto')) {
 					echo "Failed";
 				} else {
-					echo "Finish";
+					$data = [
+						'id_pelajaran' => $this->input->post('pelajaran'),
+						'nama_guru' => $this->input->post('nama'),
+						'thn_guru' => $this->input->post('tahun'),
+						'nidn_guru' => $this->input->post('nidn'),
+						'alamat_guru' => $this->input->post('alamat'),
+						'foto_guru' => $_FILES['foto']['name'],
+						'id_kelas' => $this->input->post('kelas'),
+						'password_guru' => $this->input->post('nidn'),
+					];
+					$query = $this->Models->post_guru($data);
+					if ($query) {
+						$this->session->set_flashdata('success','input data succes');
+						redirect('StaffController/guru');
+					} else {
+						$this->session->set_flashdata('success','input data failed');
+						redirect('StaffController/guru');
+					}
 				}
 			}
 		}
