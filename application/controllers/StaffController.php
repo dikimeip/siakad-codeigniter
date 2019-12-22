@@ -384,6 +384,18 @@ class StaffController extends CI_Controller
 		}
 	}
 
+	public function delete_kelas($id)
+	{
+		$query = $this->Models->delete_kelas($id);
+		if ($query) {
+			$this->session->set_flashdata('success','Hapus data succes');
+			redirect('StaffController/kelas');
+		} else {
+			$this->session->set_flashdata('success','Hapus data failed');
+			redirect('StaffController/kelas');
+		}
+	}
+
 	public function kelas()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');

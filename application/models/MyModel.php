@@ -165,5 +165,11 @@ class MyModel extends CI_Model
 	{
 		return $this->db->insert('kelas',$kelas);
 	}
+
+	public function delete_kelas($id)
+	{
+		$this->db->where('id_kelas',$id);
+		return $this->db->delete('kelas');
+	}
 	
 }

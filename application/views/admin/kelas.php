@@ -27,7 +27,7 @@
 			<td><?php echo $no ++ ?></td>
 			<td><?php echo $s['nama_kelas'] ?></td>
 			<td>
-				<a onclick="return confirm('Hapus data ..?')" href="" class="btn btn-warning btn-sm">HAPUS</a>
+				<a onclick="return confirm('Hapus data ..?')" href="<?php echo base_url() ?>StaffController/delete_kelas/<?php echo $s['id_kelas'] ?>" class="btn btn-warning btn-sm">HAPUS</a>
 			</td>
 		</tr>
 	<?php endforeach ?>
