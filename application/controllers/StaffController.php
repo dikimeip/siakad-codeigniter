@@ -303,6 +303,34 @@ class StaffController extends CI_Controller
 				$this->session->set_flashdata('success','Update data failed');
 				redirect('StaffController/guru');
 			}
+		} else {
+			$config['upload_path'] = './asset/image';
+			$config['allowed_types'] = 'png|jpg';
+			$this->load->library('upload',$config);
+			if (!$this->upload->do_upload('foto')) {
+				$this->session->set_flashdata('success','Update data failed');
+				redirect('StaffController/guru');
+			} else {
+				$id = $this->input->post('id');
+				$data = [
+					'id_pelajaran' => $this->input->post('pelajaran'),
+					'nama_guru' => $this->input->post('nama'),
+					'thn_guru' => $this->input->post('tahun'),
+					'nidn_guru' => $this->input->post('nidn'),
+					'alamat_guru' => $this->input->post('alamat'),
+					'foto_guru' => $_FILES['foto']['name'],
+					'id_kelas' => $this->input->post('kelas'),
+					'password_guru' => $this->input->post('nidn'),
+				];
+				$query = $this->Models->edit_gurus($id,$data);
+				if ($query) {
+					$this->session->set_flashdata('success','Update data succes');
+					redirect('StaffController/guru');
+				} else {
+					$this->session->set_flashdata('success','Update data failed');
+					redirect('StaffController/guru');
+				}
+			}
 		}
 	}
 

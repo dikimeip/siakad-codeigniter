@@ -138,5 +138,11 @@ class MyModel extends CI_Model
 		$this->db->where('id_guru',$id);
 		return $this->db->update('guru',$data);
 	}
+
+	public function edit_gurus($id,$data)
+	{
+		$this->db->where('id_guru',$id);
+		return $this->db->update('guru',$data);
+	}
 	
 }
