@@ -1,9 +1,14 @@
 <h1 class="text-center">Tambah Guru</h1>
+<?php if (validation_errors()): ?>
+	<div class="alert alert-danger">
+		<p><?php echo validation_errors() ?></p>
+	</div>
+<?php endif ?>
 <br>
-<form>
+<form action="<?php echo base_url('StaffController/post_guru') ?>" method="post">
 	<div class="form-group">
 		<label>Masukan nama guru</label>
-		<input type="text" name="nama" class="form-control">
+		<input type="text" name="nama" class="form-control" value="<?php echo set_value('nama') ?>">
 	</div>
 	<div class="form-group">
 		<label>Masukan Kelas guru</label>
@@ -23,15 +28,15 @@
 	</div>
 	<div class="form-group">
 		<label>Masukan Nidn guru</label>
-		<input type="number" name="nidn" class="form-control">
+		<input type="number" name="nidn" class="form-control" value="<?php echo set_value('nidn') ?>" >
 	</div>
 	<div class="form-group">
 		<label>Masukan Tahun Masuk guru</label>
-		<input type="number" name="tahun" class="form-control">
+		<input type="number" name="tahun" class="form-control" value="<?php echo set_value('tahun') ?>" >
 	</div>
 	<div class="form-group">
 		<label>Masukan Alamat guru</label>
-		<input type="text" name="alamat" class="form-control">
+		<input type="text" name="alamat" class="form-control" value="<?php echo set_value('alamat') ?>" >
 	</div>
 	<div class="form-group">
 		<label>Masukan Foto guru</label>

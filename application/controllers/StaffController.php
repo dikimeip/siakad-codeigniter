@@ -221,6 +221,25 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function post_guru()
+	{
+		$this->form_validation->set_rules('nama','Nama','required');
+		$this->form_validation->set_rules('nidn','Nidn','required|max[10]');
+		$this->form_validation->set_rules('tahun','Tahun','required|max[4]');
+		$this->form_validation->set_rules('alamat','Alamat','required');
+		if ($this->form_validation->run() == false) {
+			$data['sess'] = $this->session->userdata('isStaff');
+			$data['pelajaran'] = $this->Models->get_pelajaran();
+			$data['kelas'] = $this->Models->get_kelas();
+			$this->load->view('admin/template/header');
+			$this->load->view('admin/template/menu',$data);
+			$this->load->view('admin/tambah_guru',$data);
+			$this->load->view('admin/template/footer');
+		} else {
+			echo "Ok";
+		}
+	}
+
 	public function kelas()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
