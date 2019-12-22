@@ -150,5 +150,15 @@ class MyModel extends CI_Model
 		$this->db->where('id_guru',$id);
 		return $this->db->delete('guru');
 	}
+
+	public function search_guru($cari)
+	{
+		$this->db->select('*');
+		$this->db->from('guru');
+		$this->db->join('pelajaran','pelajaran.id_pelajaran = guru.id_pelajaran');
+		$this->db->join('kelas','kelas.id_kelas = guru.id_kelas');
+		$this->db->like('nama_guru',$cari);
+		return $this->db->get()->result_array();
+	}
 	
 }

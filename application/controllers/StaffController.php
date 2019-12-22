@@ -356,6 +356,18 @@ class StaffController extends CI_Controller
 		}
 	}
 
+	public function search_guru()
+	{
+		$cari = $this->input->post('cari');
+		$data['sess'] = $this->session->userdata('isStaff');
+		$data['siswa'] = $this->Models->search_guru($cari);
+		$data['no'] =1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/guru',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 	public function kelas()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');

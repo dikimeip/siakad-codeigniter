@@ -4,7 +4,7 @@
 		<a class="btn btn-info" href="<?php echo base_url('StaffController/tambah_guru') ?>">TAMBAH</a>
 	</div>
 	<div class="col-md-4">
-		<form method="post" action="<?php echo base_url('') ?>">
+		<form method="post" action="<?php echo base_url('StaffController/search_guru') ?>">
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="masukan nama siswa">	
 			</div>
