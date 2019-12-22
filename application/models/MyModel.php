@@ -161,6 +161,14 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
+	public function cari_kelas($cari)
+	{
+		$this->db->select('*');
+		$this->db->from('kelas');
+		$this->db->like('nama_kelas',$cari);
+		return $this->db->get()->result_array();
+	}
+
 	public function post_kelas($kelas)
 	{
 		return $this->db->insert('kelas',$kelas);

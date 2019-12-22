@@ -4,7 +4,7 @@
 		<button class="btn btn-info" data-toggle="modal" data-target="#tambah">TAMBAH</button>
 	</div>
 	<div class="col-md-4">
-		<form method="post" action="<?php echo base_url('') ?>">
+		<form method="post" action="<?php echo base_url('StaffController/cari_kelas') ?>">
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="masukan nama kelas">	
 			</div>

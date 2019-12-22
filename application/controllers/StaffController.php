@@ -395,6 +395,17 @@ class StaffController extends CI_Controller
 			redirect('StaffController/kelas');
 		}
 	}
+	public function cari_kelas()
+	{
+		$cari = $this->input->post('cari');
+		$data['sess'] = $this->session->userdata('isStaff');
+		$data['kelas'] = $this->Models->cari_kelas($cari);
+		$data['no'] =1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/kelas',$data);
+		$this->load->view('admin/template/footer');
+	}
 
 	public function kelas()
 	{
