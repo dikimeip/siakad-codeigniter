@@ -214,6 +214,7 @@ class StaffController extends CI_Controller
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
 		$data['pelajaran'] = $this->Models->get_pelajaran();
+		$data['kelas'] = $this->Models->get_kelas();
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/tambah_guru',$data);
