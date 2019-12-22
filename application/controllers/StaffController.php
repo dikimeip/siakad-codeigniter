@@ -281,6 +281,31 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function edits_guru()
+	{
+		$foto = $_FILES['foto']['name'];
+		if ($foto == "") {
+			$id = $this->input->post('id');
+			$data = [
+				'id_pelajaran' => $this->input->post('pelajaran'),
+				'nama_guru' => $this->input->post('nama'),
+				'thn_guru' => $this->input->post('tahun'),
+				'nidn_guru' => $this->input->post('nidn'),
+				'alamat_guru' => $this->input->post('alamat'),
+				'id_kelas' => $this->input->post('kelas'),
+				'password_guru' => $this->input->post('nidn'),
+			];
+			$query = $this->Models->edit_guru($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','Update data succes');
+				redirect('StaffController/guru');
+			} else {
+				$this->session->set_flashdata('success','Update data failed');
+				redirect('StaffController/guru');
+			}
+		}
+	}
+
 	public function kelas()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');

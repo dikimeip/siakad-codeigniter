@@ -1,8 +1,9 @@
 <h1 class="text-center">EDIT GURU</h1>
 <br>
-<form enctype="multipart/form-data" action="<?php echo base_url('StaffController/post_guru') ?>" method="post">
+<form enctype="multipart/form-data" action="<?php echo base_url('StaffController/edits_guru') ?>" method="post">
 	<div class="form-group">
 		<label>Masukan nama guru</label>
+		<input type="hidden" name="id" value="<?php echo $guru['id_guru'] ?>">
 		<input type="text" name="nama" class="form-control" value="<?php echo $guru['nama_guru'] ?>">
 	</div>
 	<div class="form-group">
