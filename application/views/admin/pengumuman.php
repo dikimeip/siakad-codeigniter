@@ -32,7 +32,7 @@
 			<td><?php echo $s['desk_pengumuman'] ?></td>
 			<td><?php echo $s['status'] ?></td>
 			<td>
-				<a href="" class="btn btn-info btn-sm">EDIT</a>
+				<a href="<?php echo base_url() ?>StaffController/edit_pengumuman/<?php echo $s['id_pengumuman'] ?>" class="btn btn-info btn-sm">EDIT</a>
 				<a onclick="return confirm('Hapus data ..?')" href="" class="btn btn-warning btn-sm">HAPUS</a>
 			</td>
 		</tr>

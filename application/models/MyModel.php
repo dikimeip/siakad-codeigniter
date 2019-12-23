@@ -189,5 +189,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->insert('pengumuman',$data);
 	}
+
+	public function get_pengumuman_id($id)
+	{
+		return $this->db->get_where('pengumuman',['id_pengumuman',$id])->row_array();
+	}
 	
 }

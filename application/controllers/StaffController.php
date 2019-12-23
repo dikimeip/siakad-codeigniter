@@ -530,6 +530,17 @@ class StaffController extends CI_Controller
 
 	}
 
+	public function edit_pengumuman($id)
+	{
+		$data['sess'] = $this->session->userdata('isStaff');
+		$data['pengumuman'] = $this->Models->get_pengumuman_id($id);
+		$data['no'] =1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/edit_pengumuman',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 
