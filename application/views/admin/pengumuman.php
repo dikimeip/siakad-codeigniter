@@ -2,7 +2,7 @@
 <br>
 <div class="row">
 	<div class="col-md-8">
-		<a class="btn btn-info" href="<?php echo base_url('') ?>">TAMBAH</a>
+		<button type="button" data-toggle="modal" data-target="#modal" class="btn btn-info">TAMBAH</button>
 	</div>
 	<div class="col-md-4">
 		<form method="post" action="<?php echo base_url('') ?>">
@@ -38,4 +38,26 @@
 		</tr>
 	<?php endforeach ?>
 </table>
+<div id="modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<b>INPUT PENGUMUMAN</b>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label>Masukan nama pengumuman</label>
+						<input type="text" name="nama" class="form-control" required="">
+					</div>
+					<div class="form-group">
+						<label>Masukan deskripsi pengumuman</label>
+						<textarea class="form-control" name="desk" required=""></textarea>
+					</div>
+					<input type="submit" value="SIMPAN" class="btn btn-info">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 
