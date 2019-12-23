@@ -33,7 +33,7 @@
 			<td><?php echo $s['status'] ?></td>
 			<td>
 				<a href="<?php echo base_url() ?>StaffController/edit_pengumuman/<?php echo $s['id_pengumuman'] ?>" class="btn btn-info btn-sm">EDIT</a>
-				<a onclick="return confirm('Hapus data ..?')" href="" class="btn btn-warning btn-sm">HAPUS</a>
+				<a onclick="return confirm('Hapus data ..?')" href="<?php echo base_url() ?>StaffController/delete_pengumuman/<?php echo $s['id_pengumuman'] ?>" class="btn btn-warning btn-sm">HAPUS</a>
 			</td>
 		</tr>
 	<?php endforeach ?>

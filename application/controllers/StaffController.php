@@ -561,6 +561,18 @@ class StaffController extends CI_Controller
 
 	}
 
+	public function delete_pengumuman($id)
+	{
+		$query = $this->Models->delete_pengumuman($id);
+		if ($query) {
+			$this->session->set_flashdata('success','Delete data berhasil');
+			redirect('StaffController/pengumuman');
+		} else {
+			$this->session->set_flashdata('success','Delete data Failed');
+			redirect('StaffController/pengumuman');
+		}
+	}
+
 
 
 

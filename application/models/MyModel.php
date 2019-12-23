@@ -200,5 +200,11 @@ class MyModel extends CI_Model
 		$this->db->where('id_pengumuman',$id);
 		return $this->db->update('pengumuman',$data) ;
 	}
+
+	public function delete_pengumuman($id)
+	{
+		$this->db->where('id_pengumuman',$id);
+		return $this->db->delete('pengumuman');
+	}
 	
 }
