@@ -194,5 +194,11 @@ class MyModel extends CI_Model
 	{
 		return $this->db->get_where('pengumuman',['id_pengumuman',$id])->row_array();
 	}
+
+	public function edit_pengumuman($id,$data)
+	{
+		$this->db->where('id_pengumuman',$id);
+		return $this->db->update('pengumuman',$data) ;
+	}
 	
 }

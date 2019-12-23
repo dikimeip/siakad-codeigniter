@@ -541,6 +541,26 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function edit_pengumumans()
+	{
+		$id = $this->input->post('id');
+		$data = [
+			'nama_pengumuman' => $this->input->post('nama'),
+			'desk_pengumuman' => $this->input->post('desk'),
+			'status' => $this->input->post('status'),
+		];
+
+		$query = $this->Models->edit_pengumuman($id,$data);
+		if ($query) {
+			$this->session->set_flashdata('success','Edit data berhasil');
+			redirect('StaffController/pengumuman');
+		} else {
+			$this->session->set_flashdata('success','Edit data Failed');
+			redirect('StaffController/pengumuman');
+		}
+
+	}
+
 
 
 
