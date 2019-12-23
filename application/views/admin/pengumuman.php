@@ -5,7 +5,7 @@
 		<button type="button" data-toggle="modal" data-target="#modal" class="btn btn-info">TAMBAH</button>
 	</div>
 	<div class="col-md-4">
-		<form method="post" action="<?php echo base_url('') ?>">
+		<form method="post" action="<?php echo base_url('StaffController/cari_pengumuman') ?>">
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="masukan nama siswa">	
 			</div>

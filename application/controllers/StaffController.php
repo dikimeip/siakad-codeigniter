@@ -573,6 +573,18 @@ class StaffController extends CI_Controller
 		}
 	}
 
+	public function cari_pengumuman()
+	{
+		$cari = $this->input->post('cari');
+		$data['sess'] = $this->session->userdata('isStaff');
+		$data['pengumuman'] = $this->Models->cari_pengumuman($cari);
+		$data['no'] =1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/pengumuman',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 

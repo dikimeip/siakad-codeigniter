@@ -206,5 +206,13 @@ class MyModel extends CI_Model
 		$this->db->where('id_pengumuman',$id);
 		return $this->db->delete('pengumuman');
 	}
+
+	public function cari_pengumuman($cari)
+	{
+		$this->db->select('*');
+		$this->db->from('pengumuman');
+		$this->db->like('nama_pengumuman',$cari);
+		return $this->db->get()->result_array();
+	}
 	
 }
