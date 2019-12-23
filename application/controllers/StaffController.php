@@ -503,8 +503,8 @@ class StaffController extends CI_Controller
 	{
 		//$cari = $this->input->post('cari');
 		$data['sess'] = $this->session->userdata('isStaff');
-		// $data['pelajaran'] = $this->Models->search_pelajaran($cari);
-		// $data['no'] =1;
+		$data['pengumuman'] = $this->Models->get_pengumuman();
+		$data['no'] =1;
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/pengumuman',$data);

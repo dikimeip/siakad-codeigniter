@@ -17,3 +17,25 @@
 		<p><?php echo $this->session->flashdata('success') ?></p>
 	</div>
 <?php endif ?>
+<table class="table table-hover" id="table_id">
+	<tr>
+		<th>NO</th>
+		<th>NAMA PENGUMUMAN</th>
+		<th>DESK PENGUMUMAN</th>
+		<th>STATUS</th>
+		<th>AKSI</th>
+	</tr>
+	<?php foreach ($pengumuman as $s): ?>
+		<tr>
+			<td><?php echo $no ++ ?></td>
+			<td><?php echo $s['nama_pengumuman'] ?></td>
+			<td><?php echo $s['desk_pengumuman'] ?></td>
+			<td><?php echo $s['status'] ?></td>
+			<td>
+				<a href="" class="btn btn-info btn-sm">EDIT</a>
+				<a onclick="return confirm('Hapus data ..?')" href="" class="btn btn-warning btn-sm">HAPUS</a>
+			</td>
+		</tr>
+	<?php endforeach ?>
+</table>
+

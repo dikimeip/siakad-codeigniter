@@ -179,5 +179,10 @@ class MyModel extends CI_Model
 		$this->db->where('id_kelas',$id);
 		return $this->db->delete('kelas');
 	}
+
+	public function get_pengumuman()
+	{
+		return $this->db->get('pengumuman')->result_array();
+	}
 	
 }
