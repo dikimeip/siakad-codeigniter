@@ -511,6 +511,24 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 	
+	public function do_post()
+	{
+		$data = [
+			'nama_pengumuman' => $this->input->post('nama'),
+			'desk_pengumuman' => $this->input->post('desk'),
+			'status' => 1,
+		];
+
+		$query = $this->Models->post_pengumuman($data);
+		if ($query) {
+			$this->session->set_flashdata('success','Tambah data berhasil');
+			redirect('StaffController/pengumuman');
+		} else {
+			$this->session->set_flashdata('success','Tambah data Failed');
+			redirect('StaffController/pengumuman');
+		}
+
+	}
 
 
 

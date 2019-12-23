@@ -184,5 +184,10 @@ class MyModel extends CI_Model
 	{
 		return $this->db->get('pengumuman')->result_array();
 	}
+
+	public function post_pengumuman($data)
+	{
+		return $this->db->insert('pengumuman',$data);
+	}
 	
 }

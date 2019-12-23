@@ -45,7 +45,7 @@
 				<b>INPUT PENGUMUMAN</b>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form action="<?php echo base_url('StaffController/do_post') ?>" method="post">
 					<div class="form-group">
 						<label>Masukan nama pengumuman</label>
 						<input type="text" name="nama" class="form-control" required="">
