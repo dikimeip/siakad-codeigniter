@@ -26,7 +26,7 @@
 		<td><?php echo $k['nama_siswa'] ?></td>
 		<td><?php echo $kelas['nama_kelas'] ?></td>
 		<td>
-			<a href="" class="btn btn-info" class="btn btn-info">INPUT NILAI</a>
+			<a href="<?php echo base_url() ?>GuruController/input_nilai/<?php echo $k['id_siswa'] ?>" class="btn btn-info" class="btn btn-info">INPUT NILAI</a>
 		</td>
 	</tr>
 	<?php endforeach ?>
