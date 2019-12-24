@@ -24,6 +24,15 @@ class GuruController extends CI_Controller
 		$this->load->view('guru/template/footer');
 	}
 
+	public function nilai()
+	{
+		$data['sess'] = $this->session->userdata('isGuru');
+		$this->load->view('guru/template/header');
+		$this->load->view('guru/template/menu',$data);
+		$this->load->view('guru/nilai',$data);
+		$this->load->view('guru/template/footer');
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isGuru');
