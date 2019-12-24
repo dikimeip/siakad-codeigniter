@@ -242,4 +242,6 @@ class MyModel extends CI_Model
 		$this->db->where('id_kelas',$id);
 		return $this->db->get()->result_array();
 	}
+
+	
 }

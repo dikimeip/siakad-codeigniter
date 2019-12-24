@@ -72,6 +72,17 @@ class GuruController extends CI_Controller
 		}
 	}
 
+	public function edit_nilai($id)
+	{
+		$data['sess'] = $this->session->userdata('isGuru');
+		$data['siswa'] = $this->Models->show_siswa($id);
+		var_dump($data['siswa']);
+		// $this->load->view('guru/template/header');
+		// $this->load->view('guru/template/menu',$data);
+		// $this->load->view('guru/edit_nilai');
+		// $this->load->view('guru/template/footer');
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isGuru');
