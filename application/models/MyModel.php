@@ -220,6 +220,7 @@ class MyModel extends CI_Model
 		$this->db->select('*');
 		$this->db->from('siswa');
 		$this->db->where('id_kelas',$id);
+		$this->db->join('nilai','nilai.id_siswa = siswa.id_siswa');
 		return $this->db->get()->result_array();
 	}
 	

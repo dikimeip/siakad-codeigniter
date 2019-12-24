@@ -9,9 +9,9 @@
 		</form>
 	</div>
 </div>
-<?php if ($this->session->hash('success')): ?>
+<?php if ($this->session->flashdata('success')): ?>
 	<div class="alert alert-success">
-		<p><b><?php echo $this->session->get('success') ?></b></p>
+		<p><?php echo $this->session->flashdata('success') ?></p>
 	</div>
 <?php endif ?>
 <table class="table table-striped ">
@@ -20,6 +20,7 @@
 		<th>NIM</th>
 		<th>NAMA</th>
 		<th>KELAS</th>
+		<th>NILAI</th>
 		<th>AKSI</th>
 	</tr>
 	<?php foreach ($nilai as $k): ?>
@@ -28,6 +29,7 @@
 		<td><?php echo $k['nim_siswa'] ?></td>
 		<td><?php echo $k['nama_siswa'] ?></td>
 		<td><?php echo $kelas['nama_kelas'] ?></td>
+		<td><?php echo $k['nilai'] ?></td>
 		<td>
 			<a href="<?php echo base_url() ?>GuruController/input_nilai/<?php echo $k['id_siswa'] ?>" class="btn btn-info" class="btn btn-info">INPUT NILAI</a>
 		</td>
