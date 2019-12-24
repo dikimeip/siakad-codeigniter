@@ -214,5 +214,13 @@ class MyModel extends CI_Model
 		$this->db->like('nama_pengumuman',$cari);
 		return $this->db->get()->result_array();
 	}
+
+	public function show_siswa($id)
+	{
+		$this->db->select('*');
+		$this->db->from('siswa');
+		$this->db->where('id_kelas',$id);
+		return $this->db->get()->result_array();
+	}
 	
 }

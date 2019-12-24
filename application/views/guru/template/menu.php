@@ -45,7 +45,13 @@
            <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('GuruController/nilai') ?>">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Nilai</span>
+              <span class="menu-title">Input Nilai</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('') ?>">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">Data Nilai</span>
             </a>
           </li>
            <li class="nav-item">

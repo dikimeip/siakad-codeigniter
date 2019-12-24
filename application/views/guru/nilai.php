@@ -11,3 +11,23 @@
 		</form>
 	</div>
 </div>
+<table class="table table-striped ">
+	<tr>
+		<th>NO</th>
+		<th>NIM</th>
+		<th>NAMA</th>
+		<th>PELAJARAN</th>
+		<th>AKSI</th>
+	</tr>
+	<?php foreach ($nilai as $k): ?>
+	<tr>
+		<td><?php echo $no++ ?></td>
+		<td><?php echo $k['nim_siswa'] ?></td>
+		<td><?php echo $k['nama_siswa'] ?></td>
+		<td></td>
+		<td>
+			<a href="" class="btn btn-info" class="btn btn-info">INPUT NILAI</a>
+		</td>
+	</tr>
+	<?php endforeach ?>
+</table>
