@@ -234,4 +234,12 @@ class MyModel extends CI_Model
 	{
 		return $this->db->insert('nilai',$data) ;
 	}
+
+	public function get_siswa_nilai($id)
+	{
+		$this->db->select('*');
+		$this->db->from('siswa');
+		$this->db->where('id_kelas',$id);
+		return $this->db->get()->result_array();
+	}
 }

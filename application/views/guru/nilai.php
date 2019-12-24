@@ -1,6 +1,9 @@
 <h1 class="text-center">DATA NILAI</h1>
+<br>
 <div class="row">
-	<div class="col-md-8">	</div>
+	<div class="col-md-8">	
+		<button class="btn btn-info" data-toggle = "modal" data-target="#modal">INPUT NILAI</button>
+	</div>
 	<div class="col-md-4">
 		<form>
 			<div class="form-group">
@@ -36,3 +39,29 @@
 	</tr>
 	<?php endforeach ?>
 </table>
+<div id="modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<b>INPUT NILAI</b>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label>Pilih Nama Siswa</label>
+						<select name="siswa" class="form-control">
+							<?php foreach ($siswa as $s): ?>
+								<option><?php echo $s['nama_siswa'] ?></option>
+							<?php endforeach ?>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Masukan Nilai</label>
+						<input type="text" name="nilai" class="form-control">
+					</div>
+					<input type="submit" value="SIMPAN" class="btn btn-info">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
