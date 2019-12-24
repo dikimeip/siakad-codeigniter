@@ -46,12 +46,12 @@
 				<b>INPUT NILAI</b>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form action="<?php echo base_url('GuruController/post_nilai') ?>" method="post">
 					<div class="form-group">
 						<label>Pilih Nama Siswa</label>
 						<select name="siswa" class="form-control">
 							<?php foreach ($siswa as $s): ?>
-								<option><?php echo $s['nama_siswa'] ?></option>
+								<option value="<?php echo $s['id_siswa'] ?>"><?php echo $s['nama_siswa'] ?></option>
 							<?php endforeach ?>
 						</select>
 					</div>

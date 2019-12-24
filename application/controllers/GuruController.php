@@ -56,22 +56,20 @@ class GuruController extends CI_Controller
 		$id_pelajaran = $data['sess'][0]['id_pelajaran'];
 		$id_dosen = $data['sess'][0]['id_guru'];
 		$data = [
-			'id_siswa' => $this->input->post('id'),
+			'id_siswa' => $this->input->post('siswa'),
 			'id_pelajaran' => $id_pelajaran,
 			'nilai' => $this->input->post('nilai'),
 			'id_dosen' => $id_dosen,
 			'tanggal' => date('Y-m-d')
 		];
-
 		$query = $this->Models->post_nilai($data);
 		if ($query) {
 			$this->session->set_flashdata('success','Input Data Berhasil Dilakukan');
-			redirect('GuruController/index');
+			redirect('GuruController/nilai');
 		} else {
 			$this->session->set_flashdata('success','Input Data Filed Dilakukan');
-			redirect('GuruController/index');
+			redirect('GuruController/nilai');
 		}
-
 	}
 
 	public function logout()
