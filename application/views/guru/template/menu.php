@@ -45,13 +45,13 @@
            <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Mahasiswa</span>
+              <span class="menu-title">Nilai</span>
             </a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Nilai</span>
+              <span class="menu-title">Mahasiswa</span>
             </a>
           </li>
            <li class="nav-item">
@@ -82,8 +82,5 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
+        <div class="content">
+         
