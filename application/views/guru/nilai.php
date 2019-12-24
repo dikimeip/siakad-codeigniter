@@ -5,7 +5,7 @@
 		<button class="btn btn-info" data-toggle = "modal" data-target="#modal">INPUT NILAI</button>
 	</div>
 	<div class="col-md-4">
-		<form>
+		<form action="<?php echo base_url('GuruController/cari_nilai') ?>" method="post">
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="Masukan Nama Mahasiswa">
 			</div>

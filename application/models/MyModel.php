@@ -262,6 +262,16 @@ class MyModel extends CI_Model
 		return $this->db->get()->row_array();
 	}
 
+	public function show_nilai_ids($cari)
+	{
+		$this->db->select('*');
+		$this->db->from('nilai');
+		$this->db->join('siswa','siswa.id_siswa = nilai.id_siswa');
+		$this->db->join('pelajaran','pelajaran.id_pelajaran = nilai.id_pelajaran');
+		$this->db->like('nama_siswa',$cari);
+		return $this->db->get()->result_array();
+	}
+
 	public function ubah_nilai($id,$nilai)
 	{
 		$this->db->where('id_nilai',$id);
@@ -274,5 +284,6 @@ class MyModel extends CI_Model
 		return $this->db->delete('nilai');
 	}
 
+	
 	
 }
