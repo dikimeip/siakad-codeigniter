@@ -262,5 +262,17 @@ class MyModel extends CI_Model
 		return $this->db->get()->row_array();
 	}
 
+	public function ubah_nilai($id,$nilai)
+	{
+		$this->db->where('id_nilai',$id);
+		return $this->db->update('nilai',$nilai);
+	}
+
+	public function hapus_nilai($id)
+	{
+		$this->db->where('id_nilai',$id);
+		return $this->db->delete('nilai');
+	}
+
 	
 }

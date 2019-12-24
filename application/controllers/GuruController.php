@@ -28,6 +28,9 @@ class GuruController extends CI_Controller
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
 		$data['nilai'] = $this->Models->show_nilai();
+		$id = $data['sess'][0]['id_kelas'];
+		$data['siswa'] = $this->Models->get_siswa_nilai($id);
+		
 		$data['no'] = 1;
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
@@ -56,7 +59,7 @@ class GuruController extends CI_Controller
 			'id_siswa' => $this->input->post('siswa'),
 			'id_pelajaran' => $id_pelajaran,
 			'nilai' => $this->input->post('nilai'),
-			'id_dosen' => $id_dosen,
+			'id_guru' => $id_dosen,
 			'tanggal' => date('Y-m-d')
 		];
 		$query = $this->Models->post_nilai($data);
@@ -77,6 +80,36 @@ class GuruController extends CI_Controller
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/edit_nilai',$data);
 		$this->load->view('guru/template/footer');
+	}
+
+	public function do_ubah_nilai()
+	{
+		$id = $this->input->post('id');
+		$data = [
+			'nilai' => $this->input->post('nilai')
+		];
+
+		$query = $this->Models->ubah_nilai($id,$data);
+		if ($query) {
+			$this->session->set_flashdata('success','Input Data Berhasil Dilakukan');
+			redirect('GuruController/nilai');
+		} else {
+			$this->session->set_flashdata('success','Input Data Filed Dilakukan');
+			redirect('GuruController/nilai');
+		}
+
+	}
+
+	public function hapus_nilai($id)
+	{
+		$query = $this->Models->hapus_nilai($id);
+		if ($query) {
+			$this->session->set_flashdata('success','Hapus Data Berhasil Dilakukan');
+			redirect('GuruController/nilai');
+		} else {
+			$this->session->set_flashdata('success','Hapus Data Filed Dilakukan');
+			redirect('GuruController/nilai');
+		}
 	}
 
 	public function logout()

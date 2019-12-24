@@ -35,7 +35,7 @@
 		<td><?php echo $k['nilai'] ?></td>
 		<td>
 			<a href="<?php echo base_url() ?>GuruController/edit_nilai/<?php echo $k['id_nilai'] ?>" class="btn btn-info btn-sm">EDIT</a>
-			<a href="<?php  ?>" onclick="return confirm('Hapus data ..?')" class="btn btn-warning btn-sm">HAPUS</a>
+			<a href="<?php echo base_url() ?>GuruController/hapus_nilai/<?php echo $k['id_nilai'] ?>" onclick="return confirm('Hapus data ..?')" class="btn btn-warning btn-sm">HAPUS</a>
 		</td>
 	</tr>
 	<?php endforeach ?>
