@@ -2,7 +2,15 @@
 <br>
 <form>
 	<div class="form-group">
+		<label>Nim Siswa</label>
+		<input type="text" class="form-control" name="nama" disabled="" value="<?php echo $siswa['nama_siswa'] ?>" >
+	</div>
+	<div class="form-group">
 		<label>Nama Siswa</label>
+		<input type="text" class="form-control" name="nama" disabled="" value="<?php echo $siswa['nama_siswa'] ?>" >
+	</div>
+	<div class="form-group">
+		<label>Nilai Siswa</label>
 		<input type="text" class="form-control" name="nama" disabled="" value="<?php echo $siswa['nama_siswa'] ?>" >
 	</div>
 </form>

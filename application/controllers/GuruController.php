@@ -27,11 +27,8 @@ class GuruController extends CI_Controller
 	public function nilai()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		$id = $data['sess'][0]['id_kelas'];
-		$data['nilai'] = $this->Models->show_siswa($id);
-		$data['kelas'] = $this->Models->kelas_id($id);
-		$data['siswa'] = $this->Models->get_siswa_nilai($id);
-		$data['no'] =1;
+		$data['nilai'] = $this->Models->show_nilai();
+		$data['no'] = 1;
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/nilai',$data);
@@ -75,12 +72,11 @@ class GuruController extends CI_Controller
 	public function edit_nilai($id)
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		$data['siswa'] = $this->Models->show_siswa($id);
-		var_dump($data['siswa']);
-		// $this->load->view('guru/template/header');
-		// $this->load->view('guru/template/menu',$data);
-		// $this->load->view('guru/edit_nilai');
-		// $this->load->view('guru/template/footer');
+		$data['siswa'] = $this->Models->show_nilai($id);
+		$this->load->view('guru/template/header');
+		$this->load->view('guru/template/menu',$data);
+		$this->load->view('guru/edit_nilai',$data);
+		$this->load->view('guru/template/footer');
 	}
 
 	public function logout()
