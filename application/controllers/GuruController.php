@@ -72,7 +72,7 @@ class GuruController extends CI_Controller
 	public function edit_nilai($id)
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		$data['siswa'] = $this->Models->show_nilai($id);
+		$data['siswa'] = $this->Models->show_nilai_id($id);
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/edit_nilai',$data);
