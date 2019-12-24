@@ -40,10 +40,9 @@ class GuruController extends CI_Controller
 	public function input_nilai($id)
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		// $id = $data['sess'][0]['id_kelas'];
-		// $data['nilai'] = $this->Models->show_siswa($id);
-		// $data['kelas'] = $this->Models->kelas_id($id);
-		// $data['no'] =1;
+		$data['siswa'] = $this->Models->id_siswa($id);
+		$id = $data['sess'][0]['id_pelajaran'];
+		$data['matkul'] = $this->Models->get_pelajaran_id($id);
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/post_nilai',$data);
