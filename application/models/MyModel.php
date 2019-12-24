@@ -223,4 +223,9 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 	
+	public function kelas_id($id)
+	{
+		$this->db->where('id_kelas',$id);
+		return $this->db->get('kelas')->row_array();
+	}
 }

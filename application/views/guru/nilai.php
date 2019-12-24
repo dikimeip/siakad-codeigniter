@@ -16,7 +16,7 @@
 		<th>NO</th>
 		<th>NIM</th>
 		<th>NAMA</th>
-		<th>PELAJARAN</th>
+		<th>KELAS</th>
 		<th>AKSI</th>
 	</tr>
 	<?php foreach ($nilai as $k): ?>
@@ -24,7 +24,7 @@
 		<td><?php echo $no++ ?></td>
 		<td><?php echo $k['nim_siswa'] ?></td>
 		<td><?php echo $k['nama_siswa'] ?></td>
-		<td></td>
+		<td><?php echo $kelas['nama_kelas'] ?></td>
 		<td>
 			<a href="" class="btn btn-info" class="btn btn-info">INPUT NILAI</a>
 		</td>

@@ -29,6 +29,7 @@ class GuruController extends CI_Controller
 		$data['sess'] = $this->session->userdata('isGuru');
 		$id = $data['sess'][0]['id_kelas'];
 		$data['nilai'] = $this->Models->show_siswa($id);
+		$data['kelas'] = $this->Models->kelas_id($id);
 		$data['no'] =1;
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
