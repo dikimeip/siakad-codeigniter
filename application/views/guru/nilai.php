@@ -1,8 +1,6 @@
 <h1 class="text-center">DATA NILAI</h1>
 <div class="row">
-	<div class="col-md-8">
-		
-	</div>
+	<div class="col-md-8">	</div>
 	<div class="col-md-4">
 		<form>
 			<div class="form-group">
@@ -11,6 +9,11 @@
 		</form>
 	</div>
 </div>
+<?php if ($this->session->hash('success')): ?>
+	<div class="alert alert-success">
+		<p><b><?php echo $this->session->get('success') ?></b></p>
+	</div>
+<?php endif ?>
 <table class="table table-striped ">
 	<tr>
 		<th>NO</th>

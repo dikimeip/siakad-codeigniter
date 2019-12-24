@@ -1,9 +1,10 @@
 <h1 class="text-center">TAMBAH NILAI</h1>
 <br>
-<form>
+<form action="<?php echo base_url('GuruController/post_nilai') ?>" method="post">
 	<div class="form-group">
 		<label>NIM SISWA</label>
 		<input type="text" name="nama" class="form-control" disabled="" value="<?php echo $siswa['nim_siswa'] ?>">
+		<input type="hidden" name="id" class="form-control" value="<?php echo $siswa['id_siswa'] ?>">
 	</div>
 	<div class="form-group">
 		<label>NAMA SISWA</label>
@@ -19,7 +20,7 @@
 	</div>
 	<div class="form-group">
 		<label>NILAI SISWA</label>
-		<input type="number" name="nilai" class="form-control">
+		<input type="number" name="nilai" class="form-control" required="">
 	</div>
 	<input type="submit" value="SIMPAN" class="btn btn-info">
 </form>

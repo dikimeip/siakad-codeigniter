@@ -228,4 +228,9 @@ class MyModel extends CI_Model
 		$this->db->where('id_kelas',$id);
 		return $this->db->get('kelas')->row_array();
 	}
+
+	public function post_nilai($data)
+	{
+		return $this->db->insert('nilai',$data) ;
+	}
 }
