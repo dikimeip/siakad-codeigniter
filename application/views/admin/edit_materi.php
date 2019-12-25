@@ -1,8 +1,9 @@
 <h1 class="text-center">EDIT MATERI</h1>
 <br>
-<form action="<?php echo base_url('') ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo base_url('StaffController/do_edit_materi') ?>" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<label>Nama Materi</label>
+		<input type="hidden" name="id" value="<?php echo $materi['id_materi'] ?>">
 		<input type="text" name="nama" class="form-control" disabled="" value="<?php echo $materi['nama_materi'] ?>">
 	</div>
 	<div class="form-group">

@@ -297,6 +297,11 @@ class MyModel extends CI_Model
 		return $this->db->get_where('materi',['status'=>'aktif'])->result_array();
 	}
 
+	public function get_materi_all()
+	{
+		return $this->db->get('materi')->result_array();
+	}
+
 	public function hapus_materi($id)
 	{
 		$this->db->where('id_materi',$id);
@@ -314,6 +319,12 @@ class MyModel extends CI_Model
 	public function materi_id($id)
 	{
 		return $this->db->get_where('materi',['id_materi',$id])->row_array() ;
+	}
+
+	public function ubah_materi($id,$data)
+	{
+		$this->db->where('id_materi',$id);
+		return $this->db->update('materi',$data);
 	}
 
 	

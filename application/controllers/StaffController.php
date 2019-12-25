@@ -621,7 +621,7 @@ class StaffController extends CI_Controller
 	public function materi()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		$data['materi'] = $this->Models->get_materi();
+		$data['materi'] = $this->Models->get_materi_all();
 		$data['no']=1;
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
@@ -638,6 +638,23 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/edit_materi',$data);
 		$this->load->view('admin/template/footer');
+	}
+
+	public function do_edit_materi()
+	{
+		$id = $this->input->post('id');
+		$data = [
+			'status' => $this->input->post('status')
+		];
+		$query = $this->Models->ubah_materi($id,$data);
+		if ($query) {
+			$this->session->set_flashdata('success','Ubah data berhasil');
+			redirect('StaffController/materi');
+		} else {
+			$this->session->set_flashdata('success','Ubah data Failed');
+			redirect('StaffController/materi');
+		}
+
 	}
 
 
