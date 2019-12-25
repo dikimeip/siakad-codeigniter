@@ -169,6 +169,18 @@ class GuruController extends CI_Controller
 		}
 	}
 
+	public function hapus_materi($id)
+	{
+		$query = $this->Models->hapus_materi($id);
+		if ($query) {
+			$this->session->set_flashdata('success','hapus data berhasil dilakukan');
+			redirect('GuruController/materi');
+		} else {
+			$this->session->set_flashdata('success','hapus data gagall dilakukan');
+			redirect('GuruController/materi');
+		}
+	}
+
 
 	public function logout()
 	{

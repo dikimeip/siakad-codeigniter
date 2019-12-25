@@ -294,6 +294,12 @@ class MyModel extends CI_Model
 		return $this->db->get_where('materi',['status'=>'aktif'])->result_array();
 	}
 
+	public function hapus_materi($id)
+	{
+		$this->db->where('id_materi',$id);
+		return $this->db->delete('materi');
+	}
+
 	
 	
 }
