@@ -1,0 +1,1 @@
+<h1 class="text-center">DETAIL NILAI</h1>

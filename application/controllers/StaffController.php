@@ -596,6 +596,16 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function detail_nilai($id)
+	{	
+		$data['sess'] = $this->session->userdata('isStaff');
+		$data['nilai'] = $this->Models->show_nilai_id($id);
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/detail_nilai',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 

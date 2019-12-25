@@ -26,7 +26,7 @@
 		<td><?php echo $n['nama_guru'] ?></td>
 		<td><?php echo $n['nama_pelajaran'] ?></td>
 		<td>
-			<a href="" class="btn btn-info">DETAIL</a>
+			<a href="<?php echo base_url() ?>StaffController/detail_nilai/<?php echo $n['id_nilai'] ?>" class="btn btn-info">DETAIL</a>
 		</td>
 	</tr>
 	<?php endforeach ?>
