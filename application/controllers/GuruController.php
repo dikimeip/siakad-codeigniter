@@ -181,6 +181,18 @@ class GuruController extends CI_Controller
 		}
 	}
 
+	public function cari_materi()
+	{
+		$data['sess'] = $this->session->userdata('isGuru');
+		$cari = $this->input->post('cari');
+		$data['materi'] = $this->Models->cari_materi($cari);
+		$data['no']=1;
+		$this->load->view('guru/template/header');
+		$this->load->view('guru/template/menu',$data);
+		$this->load->view('guru/materi',$data);
+		$this->load->view('guru/template/footer');
+	}
+
 
 	public function logout()
 	{

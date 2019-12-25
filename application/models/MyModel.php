@@ -300,6 +300,14 @@ class MyModel extends CI_Model
 		return $this->db->delete('materi');
 	}
 
+	public function cari_materi($cari)
+	{
+		$this->db->select('*');
+		$this->db->from('materi');
+		$this->db->like('nama_materi',$cari);
+		return $this->db->get()->result_array() ;
+	}
+
 	
 	
 }
