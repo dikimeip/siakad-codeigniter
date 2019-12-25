@@ -309,7 +309,7 @@ class MyModel extends CI_Model
 	}
 
 	public function cari_materi($cari)
-	{
+	{ 
 		$this->db->select('*');
 		$this->db->from('materi');
 		$this->db->like('nama_materi',$cari);
