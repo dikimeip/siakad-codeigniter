@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-md-8"></div>
 	<div class="col-md-4">
-		<form action="<?php echo base_url('GuruController/cari_materi') ?>" method="post">
+		<form action="<?php echo base_url('') ?>" method="post">
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="Masukan Nama Materi">
 			</div>
@@ -32,7 +32,7 @@
 			<td><?php echo $m['status'] ?></td>
 			<td><a href="<?php echo base_url('asset/file/') ?><?php echo $m['file'] ?>">DOWNLOAD</a></td>
 			<td>
-				<a href="<?php echo base_url() ?>GuruController/hapus_materi/<?php echo $m['id_materi'] ?>" class="btn btn-warning" onclick="return confirm('Yakin Hapus Data..?')" >EDIT</a>
+				<a href="<?php echo base_url() ?>StaffController/edit_materi/<?php echo $m['id_materi'] ?>" class="btn btn-success btn-sm" >EDIT</a>
 			</td>
 		</tr>
 	<?php endforeach ?>

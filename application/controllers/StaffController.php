@@ -629,6 +629,17 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function edit_materi($id)
+	{
+		$data['sess'] = $this->session->userdata('isGuru');
+		$data['materi'] = $this->Models->materi_id($id);
+		$data['no']=1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/edit_materi',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 

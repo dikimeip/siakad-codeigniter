@@ -311,6 +311,11 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array() ;
 	}
 
+	public function materi_id($id)
+	{
+		return $this->db->get_where('materi',['id_materi',$id])->row_array() ;
+	}
+
 	
 	
 }
