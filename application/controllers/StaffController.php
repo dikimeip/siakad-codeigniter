@@ -618,6 +618,17 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function materi()
+	{
+		$data['sess'] = $this->session->userdata('isGuru');
+		$data['materi'] = $this->Models->get_materi();
+		$data['no']=1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/materi',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 
