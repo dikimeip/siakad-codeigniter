@@ -657,6 +657,18 @@ class StaffController extends CI_Controller
 
 	}
 
+	public function cari_materi()
+	{
+		$data['sess'] = $this->session->userdata('isGuru');
+		$cari = $this->input->post('cari');
+		$data['materi'] = $this->Models->cari_materi($cari);
+		$data['no']=1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/materi',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 

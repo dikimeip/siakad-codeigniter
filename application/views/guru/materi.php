@@ -30,7 +30,7 @@
 			<td><?php echo $no++ ?></td>
 			<td><?php echo $m['nama_materi'] ?></td>
 			<td><?php echo $m['desk_materi'] ?></td>
-			<td><a href="<?php echo base_url('asset/file/') ?><?php echo $m['file'] ?>">DOWNLOAD</a></td>
+			<td><a target="_blank" href="<?php echo base_url('asset/file/') ?><?php echo $m['file'] ?>">DOWNLOAD</a></td>
 			<td>
 				<a href="<?php echo base_url() ?>GuruController/hapus_materi/<?php echo $m['id_materi'] ?>" class="btn btn-warning" onclick="return confirm('Yakin Hapus Data..?')" >HAPUS</a>
 			</td>
