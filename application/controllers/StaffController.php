@@ -588,6 +588,8 @@ class StaffController extends CI_Controller
 	public function nilai()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
+		$data['nilai'] = $this->Models->show_nilai();
+		$data['no']=1;
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/nilai',$data);

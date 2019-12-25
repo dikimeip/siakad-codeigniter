@@ -9,3 +9,25 @@
 		</form>
 	</div>
 </div>
+<table class="table table-hover">
+	<tr>
+		<th>NO</th>
+		<th>NIM</th>
+		<th>NAMA</th>
+		<th>GURU</th>
+		<th>PELAJARAN</th>
+		<th>AKSI</th>
+	</tr>
+	<?php foreach ($nilai as $n ): ?>
+	<tr>
+		<td><?php echo $no++ ?></td>
+		<td><?php echo $n['nim_siswa'] ?></td>
+		<td><?php echo $n['nama_siswa'] ?></td>
+		<td><?php echo $n['nama_guru'] ?></td>
+		<td><?php echo $n['nama_pelajaran'] ?></td>
+		<td>
+			<a href="" class="btn btn-info">DETAIL</a>
+		</td>
+	</tr>
+	<?php endforeach ?>
+</table>
