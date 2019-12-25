@@ -49,31 +49,25 @@
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('') ?>">
-              <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Data Nilai</span>
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="<?php echo base_url('GuruController/materi') ?>">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Materi</span>
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Pengumuman</span>
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Setting</span>
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Keluar</span>
             </a>
