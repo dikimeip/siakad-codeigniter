@@ -17,6 +17,26 @@
 		<p><?php echo $this->session->flashdata('success') ?></p>
 	</div>
 <?php endif ?>
+<table class="table table-hover">
+	<tr>
+		<th>NO</th>
+		<th>NAMA FILE</th>
+		<th>DESKRIPSI</th>
+		<th>FILE</th>
+		<th>AKSI</th>
+	</tr>
+	<?php foreach ($materi as $m): ?>
+		<tr>
+			<td><?php echo $no++ ?></td>
+			<td><?php echo $m['nama_materi'] ?></td>
+			<td><?php echo $m['desk_materi'] ?></td>
+			<td><a href="<?php echo base_url('asset/file/') ?><?php echo $m['file'] ?>">DOWNLOAD</a></td>
+			<td>
+				<a href="" class="btn btn-warning">HAPUS</a>
+			</td>
+		</tr>
+	<?php endforeach ?>
+</table>
 <div class="modal fade" id="tambah">
 	<div class="modal-dialog">
 		<div class="modal-content">

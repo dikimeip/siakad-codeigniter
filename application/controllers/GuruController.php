@@ -128,6 +128,8 @@ class GuruController extends CI_Controller
 	public function materi()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
+		$data['materi'] = $this->Models->get_materi();
+		$data['no']=1;
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/materi',$data);
@@ -143,7 +145,8 @@ class GuruController extends CI_Controller
 		} else {
 			$config['upload_path'] = "./asset/file";
 			$config['allowed_types'] ="pdf|doc|txt|xls|xlsx|docx|pptx";
-			$this->load->library('upload',$config);
+			$up = $this->load->library('upload',$config);
+			var_dump($up);
 			if (!$this->upload->do_upload('file')) {
 				$this->session->set_flashdata('success','Upload file failed');
 				redirect('GuruController/materi');
@@ -151,7 +154,7 @@ class GuruController extends CI_Controller
 				$data = [
 					'nama_materi' => $this->input->post('nama'),
 					'desk_materi' => $this->input->post('desk'),
-					'file'	=> $_FILES['file']['name'],
+					'file'	=>  $this->upload->data('file_name'),
 					'status' => 'aktif'
 				];
 				$query = $this->Models->post_materi($data);
@@ -165,6 +168,7 @@ class GuruController extends CI_Controller
 			}
 		}
 	}
+
 
 	public function logout()
 	{

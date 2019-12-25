@@ -289,6 +289,11 @@ class MyModel extends CI_Model
 		return $this->db->insert('materi',$data) ;
 	}
 
+	public function get_materi()
+	{
+		return $this->db->get_where('materi',['status'=>'aktif'])->result_array();
+	}
+
 	
 	
 }
