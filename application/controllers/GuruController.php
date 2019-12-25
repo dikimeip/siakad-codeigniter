@@ -134,6 +134,23 @@ class GuruController extends CI_Controller
 		$this->load->view('guru/template/footer');
 	}
 
+	public function post_materi()
+	{
+		$file = $_FILES['file']['name'];
+		if ($file == "") {
+			echo "File Kosong";
+		} else {
+			$config['upload_path'] = "./asset/file";
+			$config['allowed_types'] ="pdf|doc|txt|xls|xlsx|docx|pptx";
+			$this->load->library('upload',$config);
+			if (!$this->upload->do_upload('file')) {
+				echo "File gagal";
+			} else {
+				echo "Berhasil";
+			}
+		}
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isGuru');

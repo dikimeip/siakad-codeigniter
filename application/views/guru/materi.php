@@ -19,7 +19,7 @@
 				<b>TAMBAH MATERI</b>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form action="<?php echo base_url('GuruController/post_materi') ?>" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Masukan Nama Materi</label>
 						<input type="text" name="nama" class="form-control">
@@ -34,6 +34,8 @@
 					</div>
 					<input type="submit" value="SIMPAN" class="btn btn-success">
 				</form>
+				<br>
+				<p>*Type file yang di dukung hanya word,ppt,excel</p>
 			</div>
 		</div>
 	</div>
