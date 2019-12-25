@@ -606,6 +606,18 @@ class StaffController extends CI_Controller
 		$this->load->view('admin/template/footer');
 	}
 
+	public function cari_nilai()
+	{
+		$cari = $this->input->post('cari');
+		$data['sess'] = $this->session->userdata('isGuru');
+		$data['nilai'] = $this->Models->show_nilai_ids($cari);
+		$data['no']=1;
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/nilai',$data);
+		$this->load->view('admin/template/footer');
+	}
+
 
 
 
