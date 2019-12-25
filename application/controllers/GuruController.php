@@ -138,15 +138,30 @@ class GuruController extends CI_Controller
 	{
 		$file = $_FILES['file']['name'];
 		if ($file == "") {
-			echo "File Kosong";
+			$this->session->set_flashdata('success','Image wajib diisi');
+			redirect('GuruController/materi');
 		} else {
 			$config['upload_path'] = "./asset/file";
 			$config['allowed_types'] ="pdf|doc|txt|xls|xlsx|docx|pptx";
 			$this->load->library('upload',$config);
 			if (!$this->upload->do_upload('file')) {
-				echo "File gagal";
+				$this->session->set_flashdata('success','Upload file failed');
+				redirect('GuruController/materi');
 			} else {
-				echo "Berhasil";
+				$data = [
+					'nama_materi' => $this->input->post('nama'),
+					'desk_materi' => $this->input->post('desk'),
+					'file'	=> $_FILES['file']['name'],
+					'status' => 'aktif'
+				];
+				$query = $this->Models->post_materi($data);
+				if ($query) {
+					$this->session->set_flashdata('success','tambah data berhasil dilakukan');
+					redirect('GuruController/materi');
+				} else {
+					$this->session->set_flashdata('success','tambah data gagall dilakukan');
+					redirect('GuruController/materi');
+				}
 			}
 		}
 	}

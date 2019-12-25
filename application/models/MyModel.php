@@ -284,6 +284,11 @@ class MyModel extends CI_Model
 		return $this->db->delete('nilai');
 	}
 
+	public function post_materi($data)
+	{
+		return $this->db->insert('materi',$data) ;
+	}
+
 	
 	
 }

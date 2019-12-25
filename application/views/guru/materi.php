@@ -12,6 +12,11 @@
 		</form>
 	</div>
 </div>
+<?php if ($this->session->flashdata('success')): ?>
+	<div class="alert alert-info">
+		<p><?php echo $this->session->flashdata('success') ?></p>
+	</div>
+<?php endif ?>
 <div class="modal fade" id="tambah">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -22,15 +27,15 @@
 				<form action="<?php echo base_url('GuruController/post_materi') ?>" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Masukan Nama Materi</label>
-						<input type="text" name="nama" class="form-control">
+						<input type="text" name="nama" class="form-control" required="">
 					</div>
 					<div class="form-group">
 						<label>Masukan Deskripsi Materi</label>
-						<textarea class="form-control" name="desk"></textarea>
+						<textarea class="form-control" name="desk" required=""></textarea>
 					</div>
 					<div class="form-group">
 						<label>Masukan File</label>
-						<input type="file" name="file" class="form-control">
+						<input type="file" name="file" class="form-control" required="">
 					</div>
 					<input type="submit" value="SIMPAN" class="btn btn-success">
 				</form>
