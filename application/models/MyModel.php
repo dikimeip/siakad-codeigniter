@@ -341,6 +341,14 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
+	public function cari_pengumumanguru($cari)
+	{
+		$this->db->select('*');
+		$this->db->from('pengumuman');
+		$this->db->like('nama_pengumuman',$cari);
+		return $this->db->get()->result_array();
+	}
+
 	
 	
 }
