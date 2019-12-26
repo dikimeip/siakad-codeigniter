@@ -23,6 +23,7 @@
 		<th>NAMA PENGUMUMAN</th>
 		<th>DESK PENGUMUMAN</th>
 		<th>STATUS</th>
+		<th>USER</th>
 		<th>AKSI</th>
 	</tr>
 	<?php foreach ($pengumuman as $s): ?>
@@ -31,6 +32,7 @@
 			<td><?php echo $s['nama_pengumuman'] ?></td>
 			<td><?php echo $s['desk_pengumuman'] ?></td>
 			<td><?php echo $s['status'] ?></td>
+			<td><?php echo $s['user'] ?></td>
 			<td>
 				<a href="<?php echo base_url() ?>StaffController/edit_pengumuman/<?php echo $s['id_pengumuman'] ?>" class="btn btn-info btn-sm">EDIT</a>
 				<a onclick="return confirm('Hapus data ..?')" href="<?php echo base_url() ?>StaffController/delete_pengumuman/<?php echo $s['id_pengumuman'] ?>" class="btn btn-warning btn-sm">HAPUS</a>
@@ -53,6 +55,13 @@
 					<div class="form-group">
 						<label>Masukan deskripsi pengumuman</label>
 						<textarea class="form-control" name="desk" required=""></textarea>
+					</div>
+					<div class="form-group">
+						<label>MASUKAN AKUN PENGUMUMAN</label>
+						<select name="user" class="form-control">
+							<option>SISWA</option>
+							<option>GURU</option>
+						</select>
 					</div>
 					<input type="submit" value="SIMPAN" class="btn btn-info">
 				</form>
