@@ -331,6 +331,16 @@ class MyModel extends CI_Model
 		return $this->db->update('materi',$data);
 	}
 
+	public function pengumuman_guru()
+	{
+		// $this->db->get_where('pengumuman',['status'=>1,'user'=>'	GURU'])->result_array();
+		$this->db->select('*');
+		$this->db->from('pengumuman');
+		$this->db->where('user','GURU');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();
+	}
+
 	
 	
 }

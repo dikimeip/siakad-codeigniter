@@ -196,6 +196,7 @@ class GuruController extends CI_Controller
 	public function pengumuman()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
+		$data['pengumuman'] = $this->Models->pengumuman_guru();
 		$data['no']=1;
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
