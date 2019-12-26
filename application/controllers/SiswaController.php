@@ -28,6 +28,8 @@ class SiswaController extends CI_Controller
 	public function pengumuman()
 	{
 		$data['sess'] = $this->session->userdata('isSiswa');
+		$data['pengumuman']=$this->Models->cari_pengumumansiswa();
+		$data['no']=1;
 		$this->load->view('siswa/template/header',$data);
 		$this->load->view('siswa/template/menu');
 		$this->load->view('siswa/pengumuman',$data);

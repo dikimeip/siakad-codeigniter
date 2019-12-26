@@ -9,3 +9,17 @@
 		</form>
 	</div>
 </div>
+<table class="table table-hover">
+	<tr>
+		<th>NO</th>
+		<th>NAMA</th>
+		<th>ISI</th>
+	</tr>
+	<?php foreach ($pengumuman as $p): ?>
+		<tr>
+			<td><?php echo $no++ ?></td>
+			<td><?php echo $p['nama_pengumuman'] ?></td>
+			<td><?php echo $p['desk_pengumuman'] ?></td>
+		</tr>
+	<?php endforeach ?>
+</table>

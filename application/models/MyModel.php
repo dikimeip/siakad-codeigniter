@@ -349,6 +349,15 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
+	public function cari_pengumumansiswa($value='')
+	{
+		$this->db->select('*');
+		$this->db->from('pengumuman');
+		$this->db->where('user','SISWA');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();
+	}
+
 	
 	
 }
