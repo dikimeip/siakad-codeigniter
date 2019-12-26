@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-md-8"></div>
 	<div class="col-md-4">
-		<form>
+		<form action="<?php echo base_url('SiswaController/cari_pengumuman') ?>" method="post">
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="Masukan Judul Pengumuman">
 			</div>
