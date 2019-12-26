@@ -517,6 +517,7 @@ class StaffController extends CI_Controller
 			'nama_pengumuman' => $this->input->post('nama'),
 			'desk_pengumuman' => $this->input->post('desk'),
 			'status' => 1,
+			'user' => $this->input->post('user'),
 		];
 
 		$query = $this->Models->post_pengumuman($data);
@@ -548,6 +549,7 @@ class StaffController extends CI_Controller
 			'nama_pengumuman' => $this->input->post('nama'),
 			'desk_pengumuman' => $this->input->post('desk'),
 			'status' => $this->input->post('status'),
+			'user' => $this->input->post('user'),
 		];
 
 		$query = $this->Models->edit_pengumuman($id,$data);

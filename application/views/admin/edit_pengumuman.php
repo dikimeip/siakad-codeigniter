@@ -17,5 +17,13 @@
 			<option>1</option>
 		</select>
 	</div>
+	<div class="form-group">
+		<label>Masukan User Pengumuman</label>
+		<select name="user" class="form-control">
+			<option><?php echo $pengumuman['user'] ?></option>
+			<option>SISWA</option>
+			<option>GURU</option>
+		</select>
+	</div>
 	<input type="submit" value="SIMPAN" class="btn btn-info">
 </form>
