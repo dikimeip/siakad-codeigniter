@@ -366,6 +366,14 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
+	public function get_admin_tu($id)
+	{
+		$this->db->select('*');
+		$this->db->from('tu');
+		$this->db->where('id_tu',$id);
+		return $this->db->get()->row_array();
+	}
+
 	
 	
 }

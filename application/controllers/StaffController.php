@@ -611,7 +611,7 @@ class StaffController extends CI_Controller
 	public function cari_nilai()
 	{
 		$cari = $this->input->post('cari');
-		$data['sess'] = $this->session->userdata('isGuru');
+		$data['sess'] = $this->session->userdata('isStaff');
 		$data['nilai'] = $this->Models->show_nilai_ids($cari);
 		$data['no']=1;
 		$this->load->view('admin/template/header');
@@ -622,7 +622,7 @@ class StaffController extends CI_Controller
 
 	public function materi()
 	{
-		$data['sess'] = $this->session->userdata('isGuru');
+		$data['sess'] = $this->session->userdata('isStaff');
 		$data['materi'] = $this->Models->get_materi_all();
 		$data['no']=1;
 		$this->load->view('admin/template/header');
@@ -633,7 +633,7 @@ class StaffController extends CI_Controller
 
 	public function edit_materi($id)
 	{
-		$data['sess'] = $this->session->userdata('isGuru');
+		$data['sess'] = $this->session->userdata('isStaff');
 		$data['materi'] = $this->Models->materi_id($id);
 		$data['no']=1;
 		$this->load->view('admin/template/header');
@@ -661,7 +661,7 @@ class StaffController extends CI_Controller
 
 	public function cari_materi()
 	{
-		$data['sess'] = $this->session->userdata('isGuru');
+		$data['sess'] = $this->session->userdata('isStaff');
 		$cari = $this->input->post('cari');
 		$data['materi'] = $this->Models->cari_materi($cari);
 		$data['no']=1;
@@ -674,7 +674,10 @@ class StaffController extends CI_Controller
 
 	public function setting()
 	{
-		$data['sess'] = $this->session->userdata('isGuru');
+		$data['sess'] = $this->session->userdata('isStaff');
+		$id = $data['sess'][0]['id_tu'];
+		$data['admin'] = $this->Models->get_admin_tu($id);
+		
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/setting',$data);
