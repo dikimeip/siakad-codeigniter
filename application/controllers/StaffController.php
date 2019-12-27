@@ -687,7 +687,20 @@ class StaffController extends CI_Controller
 	{
 		$file = $_FILES['foto']['name'];
 		if ($file == "") {
-			echo "kosong";
+			$data['sess'] = $this->session->userdata('isStaff');
+			$id = $data['sess'][0]['id_tu'];
+			$data = [
+				'nama_tu' => $this->input->post('nama'),
+				'username_tu' => $this->input->post('username'),
+			];
+			$query = $this->Models->edit_admin_tu($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','Update data succes');
+				redirect('StaffController/index');
+			} else {
+				$this->session->set_flashdata('success','Update data failed');
+				redirect('StaffController/index');
+			}
 		} else {
 			$config['upload_path'] = './asset/image';
 			$config['allowed_types'] = 'png|jpg';
