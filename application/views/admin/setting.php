@@ -1,6 +1,6 @@
 <h1 class="text-center">SETTING AKUN</h1>
 <br>
-<form>
+<form enctype="multipart/form-data" action="<?php echo base_url('StaffController/edit_admin') ?>" method="post">
 	<div class="form-group">
 		<label>Nama Tu</label>
 		<input class="form-control" type="text" value="<?php echo $admin['nama_tu'] ?>" name="nama">
@@ -8,14 +8,6 @@
 	<div class="form-group">
 		<label>Username</label>
 		<input class="form-control" type="text" value="<?php echo $admin['username_tu'] ?>" name="username">
-	</div>
-	<div class="form-group">
-		<label>Password</label>
-		<input class="form-control" type="text" name="pswd1">
-	</div>
-	<div class="form-group">
-		<label>Ulangi Password</label>
-		<input class="form-control" type="text" name="pswd2">
 	</div>
 	<div class="form-group">
 		<label>Foto</label>

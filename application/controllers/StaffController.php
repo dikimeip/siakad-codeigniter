@@ -677,11 +677,21 @@ class StaffController extends CI_Controller
 		$data['sess'] = $this->session->userdata('isStaff');
 		$id = $data['sess'][0]['id_tu'];
 		$data['admin'] = $this->Models->get_admin_tu($id);
-		
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/setting',$data);
 		$this->load->view('admin/template/footer');
+	}
+
+	public function edit_admin()
+	{
+		$file = $_FILES['foto']['name'];
+		if ($file == "") {
+			echo "kosong";
+		} else {
+			echo "ADA";
+		}
+
 	}
 
 
