@@ -672,6 +672,16 @@ class StaffController extends CI_Controller
 	}
 
 
+	public function setting()
+	{
+		$data['sess'] = $this->session->userdata('isGuru');
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/setting',$data);
+		$this->load->view('admin/template/footer');
+	}
+
+
 
 
 

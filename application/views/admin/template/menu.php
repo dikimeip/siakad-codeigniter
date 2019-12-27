@@ -85,7 +85,7 @@
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="<?php echo base_url('StaffController/setting') ?>">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Setting</span>
             </a>
