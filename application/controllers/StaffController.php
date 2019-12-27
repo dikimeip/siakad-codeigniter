@@ -747,6 +747,20 @@ class StaffController extends CI_Controller
 			$this->load->view('admin/template/menu',$data);
 			$this->load->view('admin/password',$data);
 			$this->load->view('admin/template/footer');
+		} else {
+			$data['sess'] = $this->session->userdata('isStaff');
+			$id = $data['sess'][0]['id_tu'];
+			$data = [
+				'password' => $this->input->post('pswd2'),
+			];
+			$query = $this->Models->edit_admin_tu($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','Update password  data succes');
+				redirect('StaffController/index');
+			} else {
+				$this->session->set_flashdata('success','Update password  data failed');
+				redirect('StaffController/index');
+			}
 		}
 	}
 

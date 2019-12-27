@@ -8,11 +8,11 @@
 <form enctype="multipart/form-data" action="<?php echo base_url('StaffController/edit_password') ?>" method="post">
 	<div class="form-group">
 		<label>Masukan Password</label>
-		<input class="form-control" type="text" name="pswd1">
+		<input class="form-control" type="password" name="pswd1">
 	</div>
 	<div class="form-group">
 		<label>Ulangi Password</label>
-		<input class="form-control" type="text" name="pswd2">
+		<input class="form-control" type="password" name="pswd2">
 	</div>
 	<input type="submit" value="SIMPAN" class="btn btn-info">
 </form>
