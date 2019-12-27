@@ -2,10 +2,10 @@
 <br>
 <?php if (validation_errors()): ?>
 	<div class="alert alert-info">
-		<p><?php echo alidation_error() ?></p>
+		<p><?php echo validation_errors() ?></p>
 	</div>
 <?php endif ?>
-<form enctype="multipart/form-data" action="<?php echo base_url('StaffController/') ?>" method="post">
+<form enctype="multipart/form-data" action="<?php echo base_url('StaffController/edit_password') ?>" method="post">
 	<div class="form-group">
 		<label>Masukan Password</label>
 		<input class="form-control" type="text" name="pswd1">

@@ -729,6 +729,27 @@ class StaffController extends CI_Controller
 
 	}
 
+	public function password()
+	{
+		$data['sess'] = $this->session->userdata('isStaff');
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/template/menu',$data);
+		$this->load->view('admin/password',$data);
+		$this->load->view('admin/template/footer');
+	}
+
+	public function edit_password()
+	{
+		$this->form_validation->set_rules('pswd1','PASSWORD','matches[pswd2]|required');
+		if ($this->form_validation->run() == false) {
+			$data['sess'] = $this->session->userdata('isStaff');
+			$this->load->view('admin/template/header');
+			$this->load->view('admin/template/menu',$data);
+			$this->load->view('admin/password',$data);
+			$this->load->view('admin/template/footer');
+		}
+	}
+
 
 
 	public function logout()
