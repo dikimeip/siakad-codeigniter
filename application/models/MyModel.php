@@ -374,6 +374,12 @@ class MyModel extends CI_Model
 		return $this->db->get()->row_array();
 	}
 
+	public function edit_admin_tu($id,$data)
+	{
+		$this->db->where('id_tu',$id);
+		return $this->db->update('tu',$data);
+	}
+
 	
 	
 }
