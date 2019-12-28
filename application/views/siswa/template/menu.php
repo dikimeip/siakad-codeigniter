@@ -37,19 +37,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('SiswaController') ?>">
+            <a class="nav-link" href="<?php echo base_url('SiswaController/index') ?>">
               <i class="ti-shield menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Pelajaran</span>
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="<?php echo base_url('SiswaController/nilai') ?>">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Nilai</span>
             </a>
