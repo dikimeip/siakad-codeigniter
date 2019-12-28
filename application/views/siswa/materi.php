@@ -9,3 +9,21 @@
 		</form>
 	</div>
 </div>
+<table class="table table-hover">
+	<tr>
+		<th>NO</th>
+		<th>NAMA FILE</th>
+		<th>DESKRIPSI</th>
+		<th>STATUS</th>
+		<th>FILE</th>
+	</tr>
+	<?php foreach ($materi as $m): ?>
+		<tr>
+			<td><?php echo $no++ ?></td>
+			<td><?php echo $m['nama_materi'] ?></td>
+			<td><?php echo $m['desk_materi'] ?></td>
+			<td><?php echo $m['status'] ?></td>
+			<td><a class="btn btn-info btn-sm" target="_blank" href="<?php echo base_url('asset/file/') ?><?php echo $m['file'] ?>">DOWNLOAD</a></td>
+		</tr>
+	<?php endforeach ?>
+</table>

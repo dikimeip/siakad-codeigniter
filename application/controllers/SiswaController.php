@@ -87,6 +87,8 @@ class SiswaController extends CI_Controller
 	public function materi()
 	{
 		$data['sess'] = $this->session->userdata('isSiswa');
+		$data['materi'] = $this->Models->get_materi();
+		$data['no']=1;
 		$this->load->view('siswa/template/header',$data);
 		$this->load->view('siswa/template/menu');
 		$this->load->view('siswa/materi',$data);
