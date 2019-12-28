@@ -95,6 +95,18 @@ class SiswaController extends CI_Controller
 		$this->load->view('siswa/template/footer');
 	}
 
+	public function cari_materi()
+	{
+		$data['sess'] = $this->session->userdata('isSiswa');
+		$cari = $this->input->post('cari');
+		$data['materi'] = $this->Models->cari_materi($cari);
+		$data['no']=1;
+		$this->load->view('siswa/template/header',$data);
+		$this->load->view('siswa/template/menu');
+		$this->load->view('siswa/materi',$data);
+		$this->load->view('siswa/template/footer');
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isSiswa');

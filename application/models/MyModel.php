@@ -317,6 +317,7 @@ class MyModel extends CI_Model
 		$this->db->select('*');
 		$this->db->from('materi');
 		$this->db->like('nama_materi',$cari);
+		$this->db->where('status','aktif');
 		return $this->db->get()->result_array() ;
 	}
 
