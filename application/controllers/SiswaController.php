@@ -66,6 +66,7 @@ class SiswaController extends CI_Controller
 		$id = $data['sess'][0]['id_siswa'] ;
 		$data['nilai'] = $this->Models->get_nilai_siswa($id);
 		$data['siswa'] = $this->Models->id_siswa($id);
+		$data['no']=1;
 		$this->load->view('siswa/cetak_nilai',$data);
 
 	}
