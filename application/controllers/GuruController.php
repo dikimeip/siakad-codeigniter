@@ -227,6 +227,30 @@ class GuruController extends CI_Controller
 		$this->load->view('guru/template/footer');
 	}
 
+	public function do_edit_user()
+	{
+		$gambar = $_FILES['foto']['name'];
+		if ($gambar == "") {
+			$data['sess'] = $this->session->userdata('isGuru');
+			$id = $data['sess'][0]['id_kelas'];
+			$data = [
+				'nama_guru' => $this->input->post('nama'),
+				'alamat_guru' => $this->input->post('alamat'),
+			];
+			$query = $this->Models->edit_guru($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','update data berhasil dilakukan');
+				redirect('GuruController/index');
+			} else {
+				$this->session->set_flashdata('success','update data gagall dilakukan');
+				redirect('GuruController/index');
+			}
+
+		} else {
+			echo "ada";
+		}
+	}
+
 
 	public function logout()
 	{
