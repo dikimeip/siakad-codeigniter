@@ -744,33 +744,23 @@ class StaffController extends CI_Controller
 		$pswd2=$this->input->post('pswd2');
 
 		if ($pswd1 == $pswd2) {
-			echo "Cocok";
+			$data['sess'] = $this->session->userdata('isStaff');
+			$id = $data['sess'][0]['id_tu'];
+			$data = [
+				'password' => $this->input->post('pswd2'),
+			];
+			$query = $this->Models->edit_admin_tu($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','Update password  data succes');
+				redirect('StaffController/index');
+			} else {
+				$this->session->set_flashdata('success','Update password  data failed');
+				redirect('StaffController/index');
+			}
 		} else {
 			$this->session->set_flashdata('success','Password Failed Update');
 		 	redirect('StaffController/password');
 		}
-		// $this->form_validation->set_rules('pswd1','PASSWORD','matches[pswd2]|required');
-		// if ($this->form_validation->run() == false) {
-		// 	$data['sess'] = $this->session->userdata('isStaff');
-		// 	$this->load->view('admin/template/header');
-		// 	$this->load->view('admin/template/menu',$data);
-		// 	$this->load->view('admin/password',$data);
-		// 	$this->load->view('admin/template/footer');
-		// } else {
-		// 	$data['sess'] = $this->session->userdata('isStaff');
-		// 	$id = $data['sess'][0]['id_tu'];
-		// 	$data = [
-		// 		'password' => $this->input->post('pswd2'),
-		// 	];
-		// 	$query = $this->Models->edit_admin_tu($id,$data);
-		// 	if ($query) {
-		// 		$this->session->set_flashdata('success','Update password  data succes');
-		// 		redirect('StaffController/index');
-		// 	} else {
-		// 		$this->session->set_flashdata('success','Update password  data failed');
-		// 		redirect('StaffController/index');
-		// 	}
-		// }
 	}
 
 
