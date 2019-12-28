@@ -1,8 +1,8 @@
 <h1 class="text-center">GANTI PASSWORD</h1>
 <br>
-<?php if (validation_errors()): ?>
+<?php if ($this->session->flashdata('success')): ?>
 	<div class="alert alert-info">
-		<p><?php echo validation_errors() ?></p>
+		<p><?php echo $this->session->flashdata('success') ?></p>
 	</div>
 <?php endif ?>
 <form enctype="multipart/form-data" action="<?php echo base_url('StaffController/edit_password') ?>" method="post">
