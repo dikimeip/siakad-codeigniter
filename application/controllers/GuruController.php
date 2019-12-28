@@ -219,6 +219,8 @@ class GuruController extends CI_Controller
 	public function edit_user()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
+		$id = $data['sess'][0]['id_kelas'];
+		$data['guru'] = $this->Models->id_guru($id);
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/edit_user',$data);
