@@ -51,6 +51,9 @@ class SiswaController extends CI_Controller
 	public function nilai()
 	{
 		$data['sess'] = $this->session->userdata('isSiswa');
+		$id = $data['sess'][0]['id_siswa'] ;
+		$data['nilai'] = $this->Models->get_nilai_siswa($id);
+		$data['no']=1;
 		$this->load->view('siswa/template/header',$data);
 		$this->load->view('siswa/template/menu');
 		$this->load->view('siswa/nilai',$data);
