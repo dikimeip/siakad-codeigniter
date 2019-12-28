@@ -60,6 +60,16 @@ class SiswaController extends CI_Controller
 		$this->load->view('siswa/template/footer');
 	}
 
+	public function cetak_nilai()
+	{
+		$data['sess'] = $this->session->userdata('isSiswa');
+		$id = $data['sess'][0]['id_siswa'] ;
+		$data['nilai'] = $this->Models->get_nilai_siswa($id);
+		$data['siswa'] = $this->Models->id_siswa($id);
+		$this->load->view('siswa/cetak_nilai',$data);
+
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isSiswa');

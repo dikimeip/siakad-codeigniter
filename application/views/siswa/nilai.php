@@ -1,6 +1,8 @@
 <h1 class="text-center">NILAI SISWA</h1>
 <div class="row">
-	<div class="col-md-8"></div>
+	<div class="col-md-8">
+		<a href="<?php echo base_url('SiswaController/cetak_nilai') ?>" class="btn btn-success" target="_BLANK" >CETAK</a>
+	</div>
 	<div class="col-md-4">
 		<form>
 			<div class="form-group">
