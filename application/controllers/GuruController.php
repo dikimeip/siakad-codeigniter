@@ -18,6 +18,9 @@ class GuruController extends CI_Controller
 	public function index()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
+		// $id = $data['sess'];
+		// var_dump($id);
+		// die();
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/dasboard',$data);
@@ -219,7 +222,7 @@ class GuruController extends CI_Controller
 	public function edit_user()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		$id = $data['sess'][0]['id_kelas'];
+		$id = $data['sess'][0]['id_guru'];
 		$data['guru'] = $this->Models->id_guru($id);
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
@@ -232,7 +235,7 @@ class GuruController extends CI_Controller
 		$gambar = $_FILES['foto']['name'];
 		if ($gambar == "") {
 			$data['sess'] = $this->session->userdata('isGuru');
-			$id = $data['sess'][0]['id_kelas'];
+			$id = $data['sess'][0]['id_guru'];
 			$data = [
 				'nama_guru' => $this->input->post('nama'),
 				'alamat_guru' => $this->input->post('alamat'),
@@ -247,7 +250,28 @@ class GuruController extends CI_Controller
 			}
 
 		} else {
-			echo "ada";
+			$config['upload_path'] = './asset/image';
+			$config['allowed_types'] = 'png|jpg';
+			$this->load->library('upload',$config);
+			if (!$this->upload->do_upload('foto')) {
+				echo "Gga";
+			} else {
+				$data['sess'] = $this->session->userdata('isGuru');
+				$id = $data['sess'][0]['id_guru'];
+				$data = [
+					'nama_guru' => $this->input->post('nama'),
+					'alamat_guru' => $this->input->post('alamat'),
+					'foto_guru' => $this->upload->data('file_name')
+				];
+				$query = $this->Models->edit_guru($id,$data);
+				if ($query) {
+					$this->session->set_flashdata('success','update data berhasil dilakukan');
+					redirect('GuruController/index');
+				} else {
+					$this->session->set_flashdata('success','update data gagall dilakukan');
+					redirect('GuruController/index');
+				}
+			}
 		}
 	}
 
