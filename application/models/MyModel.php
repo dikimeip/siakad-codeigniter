@@ -391,6 +391,18 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
+	public function cari_nilai($cari,$id)
+	{
+		$this->db->select('*');
+		$this->db->from('nilai');
+		//$this->db->join('siswa','siswa.id_siswa = nilai.id_siswa');
+		$this->db->join('pelajaran','pelajaran.id_pelajaran = nilai.id_pelajaran');
+		$this->db->join('guru','guru.id_guru = nilai.id_guru');
+		$this->db->like('nama_pelajaran',$cari);
+		$this->db->where('id_siswa',$id);
+		return $this->db->get()->result_array();
+	}
+
 	
 	
 }

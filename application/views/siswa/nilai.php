@@ -4,7 +4,7 @@
 		<a href="<?php echo base_url('SiswaController/cetak_nilai') ?>" class="btn btn-success" target="_BLANK" >CETAK</a>
 	</div>
 	<div class="col-md-4">
-		<form>
+		<form action="<?php echo base_url('SiswaController/cari_nilai') ?>" method="post">
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="Masukan Nama Pelajaran">
 			</div>
