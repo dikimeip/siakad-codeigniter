@@ -19,6 +19,10 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
+              <a class="dropdown-item" href="<?php echo base_url('SiswaController/password') ?>">
+                <i class="ti-settings text-primary"></i>
+                Ganti Password
+              </a>
               <a href="<?php echo base_url('SiswaController/logout') ?>" class="dropdown-item">
                 <i class="ti-power-off text-primary"></i>
                 Logout
