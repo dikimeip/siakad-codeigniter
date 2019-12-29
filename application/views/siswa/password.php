@@ -5,7 +5,7 @@
 	</div>
 <?php endif ?>
 <br>
-<form action="<?php echo base_url('') ?>" method="post">
+<form action="<?php echo base_url('SiswaController/edit_password') ?>" method="post">
 	<div class="form-group">
 		<label>Masukan Password</label>
 		<input class="form-control" type="password" name="pas1">

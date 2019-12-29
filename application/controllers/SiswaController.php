@@ -172,6 +172,30 @@ class SiswaController extends CI_Controller
 		$this->load->view('siswa/template/footer');
 	}
 
+	public function edit_password()
+	{
+		$pas1 = $this->input->post('pas1');
+		$pas2 = $this->input->post('pas2');
+		if ($pas1 == $pas2) {
+			$data['sess'] = $this->session->userdata('isSiswa');
+			$id = $data['sess'][0]['id_siswa'];
+			$data = [
+				'password_siswa' => $this->input->post('pas2'),
+			];
+			$query = $this->Models->edit_siswa($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','Ubah Data Berhasil Dilakukan');
+				redirect('SiswaController/index');
+			} else {
+				$this->session->set_flashdata('success','Ubah Data Gagal Dilakukan');
+				redirect('SiswaController/index');
+			}
+		} else {
+			$this->session->set_flashdata('success','Ubah Data Gagal Dilakukan');
+			redirect('SiswaController/index');
+		}
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isSiswa');
