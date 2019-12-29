@@ -18,9 +18,8 @@ class GuruController extends CI_Controller
 	public function index()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		// $id = $data['sess'];
-		// var_dump($id);
-		// die();
+		$id = $data['sess'][0]['id_guru'];
+		$data['guru'] = $this->Models->id_guru($id);
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/dasboard',$data);
