@@ -247,13 +247,14 @@ class MyModel extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
-	public function show_nilai()
+	public function show_nilai($id)
 	{
 		$this->db->select('*');
 		$this->db->from('nilai');
 		$this->db->join('siswa','siswa.id_siswa = nilai.id_siswa');
-		$this->db->join('guru','guru.id_guru = nilai.id_guru');
+		//$this->db->join('guru','guru.id_guru = nilai.id_guru');
 		$this->db->join('pelajaran','pelajaran.id_pelajaran = nilai.id_pelajaran');
+		$this->db->where('id_guru',$id);
 		return $this->db->get()->result_array();
 	}
 

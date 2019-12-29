@@ -30,7 +30,8 @@ class GuruController extends CI_Controller
 	public function nilai()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		$data['nilai'] = $this->Models->show_nilai();
+		$id = $data['sess'][0]['id_guru'];
+		$data['nilai'] = $this->Models->show_nilai($id);
 		$id = $data['sess'][0]['id_kelas'];
 		$data['siswa'] = $this->Models->get_siswa_nilai($id);
 		$data['no'] = 1;
