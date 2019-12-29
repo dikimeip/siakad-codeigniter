@@ -61,7 +61,7 @@
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="" href="<?php echo base_url('SiswaController/ubah_user') ?>">
+            <a class="nav-link" href="<?php echo base_url('SiswaController/ubah_user') ?>">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Setting</span>
             </a>

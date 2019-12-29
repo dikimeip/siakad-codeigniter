@@ -118,9 +118,54 @@ class SiswaController extends CI_Controller
 		$this->load->view('siswa/template/footer');
 	}
 
+	public function edit_siswa()
+	{
+		$file = $_FILES['foto']['name'];
+		if ($file == "") {
+			$data['sess'] = $this->session->userdata('isSiswa');
+			$id = $data['sess'][0]['id_siswa'];
+			$data = [
+				'nama_siswa' => $this->input->post('nama'),
+				'alamat_siswa' => $this->input->post('alamat'),
+			];
+			$query = $this->Models->edit_siswa($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','Ubah Data Berhasil Dilakukan');
+				redirect('SiswaController/index');
+			} else {
+				$this->session->set_flashdata('success','Ubah Data Gagal Dilakukan');
+				redirect('SiswaController/index');
+			}
+		} else {
+			$config['upload_path'] = "./asset/image/";
+			$config['allowed_types'] = "jpg|png";
+			$this->load->library('upload',$config);
+			if (!$this->upload->do_upload('foto')) {
+				$this->session->set_flashdata('success','Ubah Data Failed');
+				redirect('SiswaController/index');
+			} else {
+				$data['sess'] = $this->session->userdata('isSiswa');
+				$id = $data['sess'][0]['id_siswa'];
+				$data = [
+					'nama_siswa' => $this->input->post('nama'),
+					'alamat_siswa' => $this->input->post('alamat'),
+					'foto_siswa' => $this->upload->data('file_name')
+				];
+				$query = $this->Models->edit_siswa($id,$data);
+				if ($query) {
+					$this->session->set_flashdata('success','Ubah Data Berhasil Dilakukan');
+					redirect('SiswaController/index');
+				} else {
+					$this->session->set_flashdata('success','Ubah Data Gagal Dilakukan');
+					redirect('SiswaController/index');
+				}
+			}
+		}
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isSiswa');
-		redirect('LoginCOntroller/index');
+		redirect('LoginController/index');
 	}
 }

@@ -1,6 +1,6 @@
 <h1 class="text-center">EDIT SISWA</h1>
 <br>
-<form action="<?php echo base_url('') ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo base_url('SiswaController/edit_siswa') ?>" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<label>Nama Siswa</label>
 		<input required="" type="text" name="nama" class="form-control" value="<?php echo $user['nama_siswa'] ?>" >
