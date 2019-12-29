@@ -20,6 +20,8 @@ class StaffController extends CI_Controller
 	public function index()
 	{
 		$data['sess'] = $this->session->userdata('isStaff');
+		$id = $data['sess'][0]['id_tu'];
+		$data['admin'] = $this->Models->get_admin_tu($id);
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/menu',$data);
 		$this->load->view('admin/dasboard',$data);
