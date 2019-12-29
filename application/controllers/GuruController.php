@@ -279,12 +279,34 @@ class GuruController extends CI_Controller
 	public function password()
 	{
 		$data['sess'] = $this->session->userdata('isGuru');
-		// $id = $data['sess'][0]['id_guru'];
-		// $data['guru'] = $this->Models->id_guru($id);
 		$this->load->view('guru/template/header');
 		$this->load->view('guru/template/menu',$data);
 		$this->load->view('guru/password',$data);
 		$this->load->view('guru/template/footer');
+	}
+
+	public function ubah_password()
+	{
+		$pas1 = $this->input->post('pas1');
+		$pas2 = $this->input->post('pas2');
+		if ($pas1 == $pas2) {
+			$data['sess'] = $this->session->userdata('isGuru');
+			$id = $data['sess'][0]['id_guru'];
+			$data = [
+				'password_guru' => $this->input->post('pas2'),
+			];
+			$query = $this->Models->edit_guru($id,$data);
+			if ($query) {
+				$this->session->set_flashdata('success','update data berhasil dilakukan');
+				redirect('GuruController/index');
+			} else {
+				$this->session->set_flashdata('success','update data gagall dilakukan');
+				redirect('GuruController/index');
+			}
+		} else {
+			$this->session->set_flashdata('success','Password is wrong');
+			redirect('GuruController/password');
+		}
 	}
 
 
