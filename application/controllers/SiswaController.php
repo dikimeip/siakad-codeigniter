@@ -110,8 +110,8 @@ class SiswaController extends CI_Controller
 	public function ubah_user()
 	{
 		$data['sess'] = $this->session->userdata('isSiswa');
-		// $data['materi'] = $this->Models->cari_materi($cari);
-		// $data['no']=1;
+		$id = $data['sess'][0]['id_siswa'];
+		$data['user'] = $this->Models->id_siswa($id);
 		$this->load->view('siswa/template/header',$data);
 		$this->load->view('siswa/template/menu');
 		$this->load->view('siswa/edit_user',$data);
