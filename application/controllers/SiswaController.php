@@ -107,6 +107,17 @@ class SiswaController extends CI_Controller
 		$this->load->view('siswa/template/footer');
 	}
 
+	public function ubah_user()
+	{
+		$data['sess'] = $this->session->userdata('isSiswa');
+		// $data['materi'] = $this->Models->cari_materi($cari);
+		// $data['no']=1;
+		$this->load->view('siswa/template/header',$data);
+		$this->load->view('siswa/template/menu');
+		$this->load->view('siswa/edit_user',$data);
+		$this->load->view('siswa/template/footer');
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('isSiswa');

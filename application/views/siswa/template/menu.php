@@ -15,7 +15,7 @@
               <?php echo $sess[0]['nama_siswa'] ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="<?php echo base_url('SiswaController/ubah_user') ?>">
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
@@ -61,7 +61,7 @@
             </a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="" href="<?php echo base_url('SiswaController/ubah_user') ?>">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Setting</span>
             </a>
